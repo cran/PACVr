@@ -1,0 +1,16 @@
+#exportPattern("^[[:alpha:]]+")
+
+export(PACVr.complete)
+export(RCircos.Env)
+
+import(optparse)
+
+import(RCircos)
+
+importFrom("genbankr", "readGenBank", "accession", "definition", "genes", "otherFeatures")
+
+importFrom("utils", "read.table", "write.table")
+importFrom("graphics", "polygon", "title", "legend")
+
+#importFrom("grDevices", "svg", "dev.off")
+importFrom("grDevices", "pdf", "dev.off")
