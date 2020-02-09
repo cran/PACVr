@@ -1,866 +1,1999 @@
-LOCUS       MH161174      160761 bp    DNA     circular PLN 22-MAY-2019
-DEFINITION  Nuphar japonica isolate NY692 chloroplast, complete genome.
-ACCESSION   MH161174
-VERSION     MH161174.1
-KEYWORDS    .
+LOCUS       NC_045072             160761 bp    DNA     circular PLN 29-OCT-2019
+DEFINITION  Nuphar japonica chloroplast, complete genome.
+ACCESSION   NC_045072
+VERSION     NC_045072.1
+DBLINK      BioProject: PRJNA579646
+KEYWORDS    RefSeq.
 SOURCE      chloroplast Nuphar japonica
   ORGANISM  Nuphar japonica
             Eukaryota; Viridiplantae; Streptophyta; Embryophyta; Tracheophyta;
-            Spermatophyta; Magnoliophyta; basal Magnoliophyta; Nymphaeales;
-            Nymphaeaceae; Nuphar.
+            Spermatophyta; Magnoliopsida; Nymphaeales; Nymphaeaceae; Nuphar.
 REFERENCE   1  (bases 1 to 160761)
-  AUTHORS   Gruenstaeudl,M.G.
-  TITLE     Comparative plastid genomics of Nuphar
-  JOURNAL   Unpublished
+  AUTHORS   Gruenstaeudl,M. and Jenke,N.
+  TITLE     PACVr: Plastome Assembly Coverage Visualization in R
+  JOURNAL   bioRxivorg (2019)
+  REMARK    DOI: 10.1101/697821
 REFERENCE   2  (bases 1 to 160761)
-  AUTHORS   Gruenstaeudl,M.G.
+  CONSRTM   NCBI Genome Project
   TITLE     Direct Submission
-  JOURNAL   Submitted (01-APR-2018) Institut fuer Biologie, Freie Universitaet
-            Berlin, Altensteinstr 6, Berlin, Berlin 14195, Germany
+  JOURNAL   Submitted (29-OCT-2019) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   3  (bases 1 to 160761)
+  AUTHORS   Gruenstaeudl,M.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (03-APR-2018) Institut fuer Biologie-Botanik, Freie
+            Universitaet Berlin, Altensteinstrasse 6, Berlin, Berlin 14195,
+            Germany
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence is identical to MH161174.
+            COMPLETENESS: full length.
 FEATURES             Location/Qualifiers
      source          1..160761
                      /organism="Nuphar japonica"
                      /organelle="plastid:chloroplast"
                      /mol_type="genomic DNA"
-     misc_feature    1..90644
-                     /standard_name="large single copy region LSC"
-     tRNA            complement(1..66)
+                     /db_xref="taxon:54801"
+     misc_feature    1..90653
+                     /note="Large single copy region, LSC"
+     repeat_region   90654..116283
+                     /rpt_type="inverted"
+                     /note="inverted repeat B, IRb"
+                     /standard_name="inverted repeat B, IRb"
+     misc_feature    116284..135131
+                     /note="Small single copy region, SSC"
+     repeat_region   complement(135132..160761)
+                     /rpt_type="inverted"
+                     /note="inverted repeat A, IRa"
+                     /standard_name="inverted repeat A, IRa"
+     gene            complement(join(104366..105163,76059..76172))
+                     /gene="rps12"
+                     /locus_tag="GFC72_pgp041"
+                     /trans_splicing
+                     /db_xref="GeneID:42266550"
+     CDS             complement(join(104366..104391,104932..105163,
+                     76059..76172))
+                     /gene="rps12"
+                     /locus_tag="GFC72_pgp041"
+                     /trans_splicing
+                     /codon_start=1
+                     /transl_table=11
+                     /product="ribosomal protein S12"
+                     /protein_id="YP_009706479.1"
+                     /db_xref="GeneID:42266550"
+                     /translation="MPTIKQLIRNTRQPMRNVTKSPALRGCPQRRGTCTRVYTITPKK
+                     PNSALRKVARVRLTSGFEITAYIPGIGHNLQEHSVVLVRGGRVKDLPGVRYHIVRGTL
+                     DAVGVKDRQQGRSKYGVKKPK"
+     gene            complement(join(160753..160761,1..66))
+                     /gene="trnH-GUG"
+                     /locus_tag="GFC72_pgt001"
+                     /db_xref="GeneID:42266552"
+     tRNA            complement(join(160753..160761,1..66))
+                     /gene="trnH-GUG"
+                     /locus_tag="GFC72_pgt001"
                      /product="tRNA-His"
-                     /gene="trnH-GUG"
-     gene            complement(1..66)
-                     /gene="trnH-GUG"
-                     /standard_name="trnH-GUG tRNA"
+                     /db_xref="GeneID:42266552"
+     gene            complement(402..1463)
+                     /gene="psbA"
+                     /locus_tag="GFC72_pgp085"
+                     /db_xref="GeneID:42266657"
      CDS             complement(402..1463)
                      /gene="psbA"
+                     /locus_tag="GFC72_pgp085"
                      /codon_start=1
                      /transl_table=11
                      /product="photosystem II protein D1"
-     gene            complement(402..1463)
-                     /gene="psbA"
-     tRNA            join(complement(4339..4375,1755..1789))
-                     /gene="trnK-TTT"
-                     /product="tRNA-Lys"
+                     /protein_id="YP_009706480.1"
+                     /db_xref="GeneID:42266657"
+                     /translation="MTAILERRESTSLWGRFCNWITSTENRLYIGWFGVLMIPTLLTA
+                     TSVFIIAFIAAPPVDIDGIREPVSGSLLYGNNIISGAIIPTSAAIGLHFYPIWEASSV
+                     DEWLYNGGPYELIVLHFLLGVACYMGREWELSFRLGMRPWIAVAYSAPVAAATAVFLI
+                     YPIGQGSFSDGMPLGISGTFNFMIVFQAEHNILMHPFHMLGVAGVFGGSLFSAMHGSL
+                     VTSSLIRETTENESANAGYRFGQEEETYNIVAAHGYFGRLIFQYASFNNSRSLHFFLA
+                     AWPVVGIWFTALGISTMAFNLNGFNFNQSVVDSQGRVINTWADIINRANLGMEVMHER
+                     NAHNFPLDLAAVEAPSTNG"
      gene            complement(1755..4375)
                      /gene="trnK-TTT"
+                     /locus_tag="GFC72_pgt002"
+                     /db_xref="GeneID:42266586"
+     tRNA            complement(join(1755..1789,4339..4375))
+                     /gene="trnK-TTT"
+                     /locus_tag="GFC72_pgt002"
                      /product="tRNA-Lys"
+                     /db_xref="GeneID:42266586"
+     gene            complement(2075..3592)
+                     /gene="matK"
+                     /locus_tag="GFC72_pgp084"
+                     /db_xref="GeneID:42266561"
      CDS             complement(2075..3592)
                      /gene="matK"
+                     /locus_tag="GFC72_pgp084"
                      /codon_start=1
                      /transl_table=11
                      /product="maturase K"
-     gene            complement(2075..3592)
-                     /gene="matK"
-     CDS             3868..5940
-                     /note="large single copy region LSC"
-                     /standard_name="large single copy region LSC"
-     CDS             join(complement(6242..6281,5188..5414))
+                     /protein_id="YP_009706481.1"
+                     /db_xref="GeneID:42266561"
+                     /translation="MEKLQYELQGYLEIDRYRKQRFLYPLLFREYIYALAHDHGLNSS
+                     IFYEPTENLGYDNDNKSSSLIVKRLITRLHQQNHLIISVNDSRFVGPNRSFYSQTISE
+                     GFAGIMEIPFSMRLVPSLERIAKYQNLRSIHSIFPFLEDKLSHLYYVSDILIPHPIHL
+                     EILLQTLRTRIRDAPSLHLLRCFLHEHHNWNSLITPKKSISIFSKENQRLFLFLYNSH
+                     VYECESVLVFLRKQSSHLRSISSLAFLERTHFYGKIKHLVVAPRNDSQRTLPLWFFKE
+                     PLMHYVRYQGKSIMASRCTNLLMKKWKYYLVNFWQCHFHLWSQPGGIHINELSNHSFY
+                     FLGYLSGVRLMPWVIRSQMLENSFMIDTAIKRFDTIVPIFPLIGSLVKAKFCNVSGYP
+                     ISKSVWADSSDSDIIARFGWICRNLSHYHSGSSKKHSLCRIKYILRLSCARTLARKHK
+                     STVRAICKRLGSKLLEEFLTEEQEIVSFIFRRTRLRSERIWYLDIIRINGLVPHS"
+     gene            complement(5188..6281)
                      /gene="rps16"
+                     /locus_tag="GFC72_pgp083"
+                     /db_xref="GeneID:42266571"
+     CDS             complement(join(5188..5414,6242..6281))
+                     /gene="rps16"
+                     /locus_tag="GFC72_pgp083"
                      /codon_start=1
                      /transl_table=11
                      /product="ribosomal protein S16"
-     gene            complement(5188..6281)
-                     /gene="rps16"
-     tRNA            complement(8444..8515)
-                     /gene="trnQ-TTG"
-                     /product="tRNA-Gln"
+                     /protein_id="YP_009706482.1"
+                     /db_xref="GeneID:42266571"
+                     /translation="MVKLRLKRCGRRQRATYRIIAIDVRSRREGRDLRKVGFYDPIKN
+                     QTYLNVPAILYLLEKGAQPTETVHDISKKAEVFKELLVNQTKLN"
      gene            complement(8444..8515)
                      /gene="trnQ-TTG"
+                     /locus_tag="GFC72_pgt003"
+                     /db_xref="GeneID:42266585"
+     tRNA            complement(8444..8515)
+                     /gene="trnQ-TTG"
+                     /locus_tag="GFC72_pgt003"
+                     /product="tRNA-Gln"
+                     /db_xref="GeneID:42266585"
+     gene            8864..9049
+                     /gene="psbK"
+                     /locus_tag="GFC72_pgp082"
+                     /db_xref="GeneID:42266670"
      CDS             8864..9049
                      /gene="psbK"
+                     /locus_tag="GFC72_pgp082"
                      /codon_start=1
                      /transl_table=11
                      /product="photosystem II protein K"
-     gene            8864..9049
-                     /gene="psbK"
+                     /protein_id="YP_009706483.1"
+                     /db_xref="GeneID:42266670"
+                     /translation="MPNIFSLICICLNSALQPSGFFFAKLPEAYAFLNPIVDVMPVIP
+                     VLFFLLAFVWQAAVSFR"
+     gene            9486..9596
+                     /gene="psbI"
+                     /locus_tag="GFC72_pgp081"
+                     /db_xref="GeneID:42266631"
      CDS             9486..9596
                      /gene="psbI"
+                     /locus_tag="GFC72_pgp081"
                      /codon_start=1
                      /transl_table=11
                      /product="photosystem II protein I"
-     gene            9486..9596
-                     /gene="psbI"
-     tRNA            complement(9776..9863)
-                     /gene="trnS-GCT"
-                     /product="tRNA-Ser"
+                     /protein_id="YP_009706484.1"
+                     /db_xref="GeneID:42266631"
+                     /translation="MLTLKLFVYTVVIFFVSLFIFGFLSNDPGRNPGREE"
      gene            complement(9776..9863)
                      /gene="trnS-GCT"
-     tRNA            join(10626..10648,11428..11475)
-                     /gene="trnG-TCC"
-                     /product="tRNA-Gly"
+                     /locus_tag="GFC72_pgt004"
+                     /db_xref="GeneID:42266642"
+     tRNA            complement(9776..9863)
+                     /gene="trnS-GCT"
+                     /locus_tag="GFC72_pgt004"
+                     /product="tRNA-Ser"
+                     /db_xref="GeneID:42266642"
      gene            10626..11475
                      /gene="trnG-TCC"
-     tRNA            11617..11688
-                     /gene="trnR-TCT"
-                     /product="tRNA-Arg"
+                     /locus_tag="GFC72_pgt005"
+                     /db_xref="GeneID:42266651"
+     tRNA            join(10626..10648,11428..11475)
+                     /gene="trnG-TCC"
+                     /locus_tag="GFC72_pgt005"
+                     /product="tRNA-Gly"
+                     /db_xref="GeneID:42266651"
      gene            11617..11688
                      /gene="trnR-TCT"
+                     /locus_tag="GFC72_pgt006"
+                     /db_xref="GeneID:42266595"
+     tRNA            11617..11688
+                     /gene="trnR-TCT"
+                     /locus_tag="GFC72_pgt006"
+                     /product="tRNA-Arg"
+                     /db_xref="GeneID:42266595"
+     gene            complement(11823..13346)
+                     /gene="atpA"
+                     /locus_tag="GFC72_pgp080"
+                     /db_xref="GeneID:42266671"
      CDS             complement(11823..13346)
                      /gene="atpA"
+                     /locus_tag="GFC72_pgp080"
                      /codon_start=1
                      /transl_table=11
                      /product="ATP synthase CF1 alpha subunit"
-     gene            complement(11823..13346)
-                     /gene="atpA"
-     CDS             join(complement(14584..14728,13410..13819))
+                     /protein_id="YP_009706485.1"
+                     /db_xref="GeneID:42266671"
+                     /translation="MVTIRAEEISNIIRERIEQYNREVKIVNTGTVLQVGDGIARIHG
+                     LDEVMAGELVEFEEGTIGIAPNLESNNVGVVLMGDGLMIQEGSSVKATGRIAQIPVSE
+                     AYLGRVINALAKPIDGRGQILASEYRLIESPAPGIISRRSVYEPLQTGLIAIDSMIPI
+                     GRGQRELIIGDRQTGKTAVATDTILNQKGQNVICVYVAIGQKASSVAQVVTTFQERGA
+                     MEYTIVVAETADSPATLQYLAPYTGAALAEYFMYRERHTLIIYDDLSKQAQAYRQMSL
+                     LLRRPPGREAYPGDVFYLHSRLLERAAKPSSRLGEGSMTALPIVETQSGDVSAYIPTN
+                     VISITDGQIFLSADLFNAGIRPAINVGISVSRVGSAAQIKAMKQVAGKSKLELAQFAE
+                     LEAFAQFASDLDKATQNQLARGQRLRELLKQSQSSPLAVDEQIVTIYTGTNGYLDQLE
+                     IGQVRKFLVQLRTYLRTNKPQFQEIISSTKVFTEQAEAILKEAIQEQIELFLLQEQT"
+     gene            complement(13410..14728)
                      /gene="atpF"
+                     /locus_tag="GFC72_pgp079"
+                     /db_xref="GeneID:42266570"
+     CDS             complement(join(13410..13819,14584..14728))
+                     /gene="atpF"
+                     /locus_tag="GFC72_pgp079"
                      /codon_start=1
                      /transl_table=11
                      /product="ATP synthase CF0 B subunit"
-     gene            complement(13410..14728)
-                     /gene="atpF"
+                     /protein_id="YP_009706486.1"
+                     /db_xref="GeneID:42266570"
+                     /translation="MKNLTDSFVFLGHWPSAGSFGFNTDILATNLINLSVVLGVLIFF
+                     GKGVLSDLLDNRKQRILSTIRNSEELSGGAVEQLEKARARLRKVEREAEEFRVNGYSE
+                     IEQEKVNLINAAYQNLEQLENYKNETIHFEQQRAINQVQQRVFQQALQGALGTLNNCL
+                     NGELHLRTIGANIGILGAMKEITD"
+     gene            complement(15093..15338)
+                     /gene="atpH"
+                     /locus_tag="GFC72_pgp078"
+                     /db_xref="GeneID:42266581"
      CDS             complement(15093..15338)
                      /gene="atpH"
+                     /locus_tag="GFC72_pgp078"
                      /codon_start=1
                      /transl_table=11
                      /product="ATP synthase CF0 C subunit"
-     gene            complement(15093..15338)
-                     /gene="atpH"
+                     /protein_id="YP_009706487.1"
+                     /db_xref="GeneID:42266581"
+                     /translation="MNPLISAASVIAAGLAVGLASIGPGVGQGTAAGQAVEGIARQPE
+                     AEGKIRGTLLLSLAFMEALTIYGLVVALALLFANPFV"
+     gene            complement(16657..17403)
+                     /gene="atpI"
+                     /locus_tag="GFC72_pgp077"
+                     /db_xref="GeneID:42266625"
      CDS             complement(16657..17403)
                      /gene="atpI"
+                     /locus_tag="GFC72_pgp077"
                      /codon_start=1
                      /transl_table=11
                      /product="ATP synthase CF0 A subunit"
-     gene            complement(16657..17403)
-                     /gene="atpI"
+                     /protein_id="YP_009706488.1"
+                     /db_xref="GeneID:42266625"
+                     /translation="MNVLPCSINTLKGLYEISGVEVGQHFYWQIGGFQVHAQVLITSW
+                     VVIAILLGSAAIAVRNPQTIPTDGQNFFEYVLEFIRDVSKTQIGEEEYGPWVPFIGTL
+                     FLFIFVSNWSGALLPWRIIQLPHGELAAPTNDINTTVALALLTSVAYFYAGLTKKGLG
+                     YFGKYIQPTPILLPINVLEDFTKPLSLSFRLFGNILADELVVVVLVSLVPLVIPIPVM
+                     FLGLFTSGIQALIFATLAAAYIGESMEGHH"
+     gene            complement(17649..18365)
+                     /gene="rps2"
+                     /locus_tag="GFC72_pgp076"
+                     /db_xref="GeneID:42266596"
      CDS             complement(17649..18365)
                      /gene="rps2"
+                     /locus_tag="GFC72_pgp076"
                      /codon_start=1
                      /transl_table=11
                      /product="ribosomal protein S2"
-     gene            complement(17649..18365)
-                     /gene="rps2"
+                     /protein_id="YP_009706489.1"
+                     /db_xref="GeneID:42266596"
+                     /translation="MTRRYWNISLEEMMEAGVHFGHGTRKWNPRMAPYISAKRKGIHI
+                     TNLTRTARFLSEACDLVFDAASRGKHFLIVGTKDKAADSVASAAIRARCHYVNKKWLG
+                     GMSTNWSTTETRLHKFRDLRVRAEMGQLSRLPKRDAAILKRQLSHFQTYLGGIKYMTG
+                     LPDIVIIIDQQEEYTALRECVTLGIPTICLIDTNCDPDLADIPIPANDDAIASIRLIL
+                     NKLVSAICQGRSSYSYIRSR"
+     gene            complement(18591..22763)
+                     /gene="rpoC2"
+                     /locus_tag="GFC72_pgp075"
+                     /db_xref="GeneID:42266679"
      CDS             complement(18591..22763)
                      /gene="rpoC2"
+                     /locus_tag="GFC72_pgp075"
                      /codon_start=1
                      /transl_table=11
                      /product="RNA polymerase beta'' subunit"
-     gene            complement(18591..22763)
-                     /gene="rpoC2"
-     CDS             join(complement(25281..25733,22908..24536))
+                     /protein_id="YP_009706490.1"
+                     /db_xref="GeneID:42266679"
+                     /translation="MEVLMAERADLVFHNKVIDGTAMKRLISRLIDHFGIAYTSHILD
+                     QVKTLGFHQATATSISLGIDDLLTTPSKGWLVQDAEQQSLILEKHHHYGNVHAVEKLR
+                     QSIEIWYATSEYLRQEMNLNFRMTDPSNPVHIMSYSGARGNASQVHQLVGMRGLMSDP
+                     QGQMIDLPIQSNLREGLSLTEYTISCYGARKGVVDTAVRTSDAGYLTRRLVEVVQHIV
+                     VRRTDCGTTRGISVSLRKGMTERIFIQTLIGRVLANDVYLGLRCIATRNQDIGIGLVN
+                     RFMTSRAQPIYIRTPFTCRSASWICRLCYGRSPTHGDLVELGEAVGIIAGQSIGEPGT
+                     QLTLRTFHTGGVFTGGTAEHVRAPSNGKIKFNEDLVHPTRTRHGHPAFLCYVDLYVTI
+                     ESQDIIHSVNIPPKSFLLAQNDQYVESEQVIAEIRAGTSTFHFKERVRKHIYSDSEGE
+                     MHWSTDVYHAPEYTHGNVHFLPKTSHLWILSGGPCKSSLVPFSLHKDQDQMNVQSLSV
+                     QERYISDFSVNNNRVRHKLFGSDPLAKRGQRISDYAAGFERVISNGHWDFIYPAILRE
+                     NSYLLAKRRRNRFIIPFQYDPEREKELTPRSSTSIAVEIPANGILRRNSILAYFDDPR
+                     YRRSSSGITKYGTIEVDSIVKKEGLIEYRGPKESRPKYQMKVDRFFVIPEEVHILPGS
+                     SSIMVRNNSIIGVDTRITFNTRSQIGGLVRVEKKKKKIELKIFSGGIHFPGETDKISR
+                     HIGILIPPGARKKMDKGSKGKNWEGKNWVYVQRITPIKKKYFVSVRPVVTYEIADGIN
+                     LVTLFPRDMLQEKDNLRLRVVNYILYGDGKPIRGISHTSIQLVRTCLVLNWDQDKKGS
+                     IEKVQASSAEVRANDLIRYFIRIDLVKSPILYTGKRNDRAGSVIPDTGSYCANTNLFS
+                     SKVKMKSLSQHQGTVHTFLNRNKEGQSLIVFSSSNCSRINVSKYHNVTKESIKEKEDP
+                     LIPILNSSGPLGTVPKIYNFSSSYHSITHNEILLNKYLLLDNNNPKQTFQLLKYYLVD
+                     ENGRISNPNPCSDIILNLFDSNSCFLPHDYCEGTSTTTIISLGQFICENVCLSKHGTR
+                     IKSGQVIMVHVDSFIIRSAKPYLATRGATVHGDYGEIFYEGDTLVTFIYEKSRSGDIT
+                     HGLPKVEQVLEVRSIDSISMNLEKRVEGWNEHITGILGIPWGFLIGAELTIAQSRISL
+                     VNKIQKVYRSQGVQIHNRHIEIIVRQITSKVLVSEDGMSNVFSPGELIGLLRAERAGR
+                     ALEEAICYRAVLLGITRASLNTQSFISEASFQETARVLAKAALRGRIDWLKGLKENVV
+                     LGGMIPVGTGFKRFVHRSREYNNIPLEIQKKNLFGGEMRDILFHHRELFGSCIPKPKS
+                     FHNTSEQPFYGI"
+     gene            complement(22908..25733)
                      /gene="rpoC1"
+                     /locus_tag="GFC72_pgp074"
+                     /db_xref="GeneID:42266556"
+     CDS             complement(join(22908..24536,25281..25733))
+                     /gene="rpoC1"
+                     /locus_tag="GFC72_pgp074"
                      /codon_start=1
                      /transl_table=11
                      /product="RNA polymerase beta' subunit"
-     gene            complement(22908..25733)
-                     /gene="rpoC1"
+                     /protein_id="YP_009706491.1"
+                     /db_xref="GeneID:42266556"
+                     /translation="MNQNFSSMIDQYKHQQLRIGSVSPKQIRAWANKILPNGEIVGEV
+                     TKPYTFHYKTNKPEKDGLFCERIFGPIKSGICACGNYRVIGGEKEEPKFCEQCGVESV
+                     DSRIRRYQMGYIKLACPVTHVWYLKRLPSYIANLSDKPLKELEGLVYCDFSFARPIAK
+                     KPTFLRLRGSFEYEIQSRKYSIPLFFTTQGFDTFRNREISTGATAIREQLADPDLRII
+                     IDRSLVEWKELGEEGSTGNDWEDRKIGRRKDFLVRRMELAKHFLRTNVEPEWMVLCLL
+                     PVLPPELRPIIQIDGGKPMSSDINELYRRVIYRNNTLTDLLTTSRSTPGELVMCQEKL
+                     VQEAVDTLLDNGIRGQPMRDGHNKVYKSFSDVIEGKEGRFRETLLGKRVDYSGRSVIV
+                     VGPSLSLHRCGLPREIAIELFQTFVIRGLIRQNLASNIGLAKSKIREKEPIVWEILQE
+                     VMQGHPVLLNRAPTLHRLGIQAFQPILVEGRAICLHPLVCKGFNADFDGDQMAVHVPL
+                     SLEAQAEARLLMFSHTNLLSPAIGDPISVPTQDMLMGLYVLTMGNRRGICANRYNPCN
+                     SRNYQNERTDHNNYKYRKGKEPYFCSSYDALGAYRQKGIDLYSTLWLRWRLDQRVIAS
+                     INREIPIEVQYESLGTYHEIYDHYRVVRSVKKGMLCIYIRTTVGHISFYREIEEAVQG
+                     FCRSYSYSYGT"
+     gene            complement(25739..28954)
+                     /gene="rpoB"
+                     /locus_tag="GFC72_pgp073"
+                     /db_xref="GeneID:42266558"
      CDS             complement(25739..28954)
                      /gene="rpoB"
+                     /locus_tag="GFC72_pgp073"
                      /codon_start=1
                      /transl_table=11
                      /product="RNA polymerase beta subunit"
-     gene            complement(25739..28954)
-                     /gene="rpoB"
-     tRNA            30262..30333
-                     /gene="trnC-GCA"
-                     /product="tRNA-Cys"
+                     /protein_id="YP_009706492.1"
+                     /db_xref="GeneID:42266558"
+                     /translation="MLRDGGDEGMFTIPGFSQIQFEGFCRFIDQGLMEELHQFPKIED
+                     TDQEIEFQLFGESYQLVEPLIKERDAVYESITYSSELYVPAGLIWRTGRNMQEQTVLL
+                     GNIPLMNSSGTSIVNGIYRIVINQILQSPGIYYGTGLDHNGISVYTGTIISDWGGRSE
+                     LEIDRKERIWARVSRKQKISILVLSSAMGSSLREILDNVCYPEIFLSFPNEKEKKKIG
+                     SKENAILEFYQKFACVGGDPVFSESLCKELQKKFFQQRCELGRIGRRNMNQRLNLDIP
+                     QNNTFLLPRDVLAAADHLIGIKFGMGTLDDMNHLKNKRIRSVADLLQDQFGLALVRLE
+                     NVVRGTICGAIRHKLIPTPHNLVTSTPLTTTYESFFGLHPLSQVLDRTNPLTQIVHGR
+                     KSSYLGPGGLTGRTASFRIRDIHPSHYGRICPIDTSEGINVGLIGSLAIHARVGDWGS
+                     IETPFYEISERSKEEQMVYLSPSRDEYYMVAAGNSLALNRGIQEEEVGPARYRQEFLT
+                     IAWEQIHLRNIYPFQYFSIGASLIPFIEHNDANRALMSSNMQRQAVPLSQSEKCIVGT
+                     GLERQAALDSGGSAIAEREGKIIYTDAEKIVLSGNGDTISIPLVMYQRSNKNTWMHQK
+                     PQVHRGKYLKKGQILADGAATVGGELALGKNVSVAYMPWEGYNSEDAVLVSERLVYDD
+                     IYTSFHIRKYEIQTHVTSQGPERITNEIPHLEPYLLRNLDRNGIVMLGSWVETGDVLV
+                     GKLTPQTAKESSYAPEDRLLRAILGIQVSTAKETCLKLPIGGRGRVIDVRWGQKKGGS
+                     IYNPEMIRVYISQKRKIKVGDKVAGRHGNKGIISKILPRQDMPYLQDGTPVDMVFNPL
+                     GVPSRMNVGQMFECSLGLAGDLLGRHYRITPFDERYEQEASRKLVFSELYEASKQTAN
+                     PWVFEPEYPGKSRIFDGRTGDPFEQPVIIGKSYMLKLIHQVDDKIHGRSSGHYALVTQ
+                     QPLRGRAKQGGQRVGEMEVWALEGFGVAHILQEMLTYKSDHIRARQEVLGTTIVGGTI
+                     PNPEGAPESFRLLVRELRSLSLELNHFLVSEKNFQINRKEV"
      gene            30262..30333
                      /gene="trnC-GCA"
+                     /locus_tag="GFC72_pgt007"
+                     /db_xref="GeneID:42266557"
+     tRNA            30262..30333
+                     /gene="trnC-GCA"
+                     /locus_tag="GFC72_pgt007"
+                     /product="tRNA-Cys"
+                     /db_xref="GeneID:42266557"
+     gene            31231..31320
+                     /gene="petN"
+                     /locus_tag="GFC72_pgp072"
+                     /db_xref="GeneID:42266672"
      CDS             31231..31320
                      /gene="petN"
+                     /locus_tag="GFC72_pgp072"
                      /codon_start=1
                      /transl_table=11
                      /product="cytochrome b6/f complex subunit VIII"
-     gene            31231..31320
-                     /gene="petN"
+                     /protein_id="YP_009706493.1"
+                     /db_xref="GeneID:42266672"
+                     /translation="MDIVSLAWAALMVVFTFSLSLVVWGRSGL"
+     gene            complement(32702..32806)
+                     /gene="psbM"
+                     /locus_tag="GFC72_pgp071"
+                     /db_xref="GeneID:42266650"
      CDS             complement(32702..32806)
                      /gene="psbM"
+                     /locus_tag="GFC72_pgp071"
                      /codon_start=1
                      /transl_table=11
                      /product="photosystem II protein M"
-     gene            complement(32702..32806)
-                     /gene="psbM"
-     tRNA            complement(33586..33659)
-                     /gene="trnD-GTC"
-                     /product="tRNA-Asp"
+                     /protein_id="YP_009706494.1"
+                     /db_xref="GeneID:42266650"
+                     /translation="MEVNILAFIATALFILVPTAFLLIIYVKTVSQND"
      gene            complement(33586..33659)
                      /gene="trnD-GTC"
-     tRNA            complement(34091..34174)
-                     /gene="trnY-GTA"
-                     /product="tRNA-Tyr"
+                     /locus_tag="GFC72_pgt008"
+                     /db_xref="GeneID:42266645"
+     tRNA            complement(33586..33659)
+                     /gene="trnD-GTC"
+                     /locus_tag="GFC72_pgt008"
+                     /product="tRNA-Asp"
+                     /db_xref="GeneID:42266645"
      gene            complement(34091..34174)
                      /gene="trnY-GTA"
-     tRNA            complement(34238..34310)
-                     /gene="trnE-TTC"
-                     /product="tRNA-Glu"
+                     /locus_tag="GFC72_pgt009"
+                     /db_xref="GeneID:42266658"
+     tRNA            complement(34091..34174)
+                     /gene="trnY-GTA"
+                     /locus_tag="GFC72_pgt009"
+                     /product="tRNA-Tyr"
+                     /db_xref="GeneID:42266658"
      gene            complement(34238..34310)
                      /gene="trnE-TTC"
-     tRNA            35051..35122
-                     /gene="trnT-GGT"
-                     /product="tRNA-Thr"
+                     /locus_tag="GFC72_pgt010"
+                     /db_xref="GeneID:42266653"
+     tRNA            complement(34238..34310)
+                     /gene="trnE-TTC"
+                     /locus_tag="GFC72_pgt010"
+                     /product="tRNA-Glu"
+                     /db_xref="GeneID:42266653"
      gene            35051..35122
                      /gene="trnT-GGT"
+                     /locus_tag="GFC72_pgt011"
+                     /db_xref="GeneID:42266666"
+     tRNA            35051..35122
+                     /gene="trnT-GGT"
+                     /locus_tag="GFC72_pgt011"
+                     /product="tRNA-Thr"
+                     /db_xref="GeneID:42266666"
+     gene            36664..37725
+                     /gene="psbD"
+                     /locus_tag="GFC72_pgp070"
+                     /db_xref="GeneID:42266673"
      CDS             36664..37725
                      /gene="psbD"
+                     /locus_tag="GFC72_pgp070"
                      /codon_start=1
                      /transl_table=11
                      /product="photosystem II protein D2"
-     gene            36664..37725
-                     /gene="psbD"
+                     /protein_id="YP_009706495.1"
+                     /db_xref="GeneID:42266673"
+                     /translation="MTIALGRFTKEENDLFDIMDDWLRRDRFVFVGWSGLLLFPCAYF
+                     ALGGWFTGTTFVTSWYTHGLASSYLEGCNFLTAAVSTPANSLAHSLLLLWGPEAQGDF
+                     TRWCQLGGLWTFVALHGAFGLIGFMLRQFELARSVQLRPYNAIAFSAPIAVFVSVFLI
+                     YPLGQSGWFFAPSFGVAAIFRFILFFQGFHNWTLNPFHMMGVAGVLGAALLCAIHGAT
+                     VENTLFEDGDGANTFRAFNPTQAEETYSMVTANRFWSQIFGVAFSNKRWLHFFMLFVP
+                     VTGLWMSALGVVGLALNLRAYDFVSQEIRAAEDPEFETFYTKNILLNEGIRAWMAAQD
+                     QPHENLIFPEEVLPRGNAL"
+     gene            37673..39094
+                     /gene="psbC"
+                     /locus_tag="GFC72_pgp069"
+                     /db_xref="GeneID:42266587"
      CDS             37673..39094
                      /gene="psbC"
+                     /locus_tag="GFC72_pgp069"
                      /codon_start=1
                      /transl_table=11
                      /product="photosystem II 44 kDa protein"
-     gene            37673..39094
-                     /gene="psbC"
-     tRNA            complement(39314..39406)
-                     /gene="trnS-TGA"
-                     /product="tRNA-Ser"
+                     /protein_id="YP_009706496.1"
+                     /db_xref="GeneID:42266587"
+                     /translation="MKTLYSLRRFYPVETLFNGTLALAGRDQETTGFAWWAGNARLIN
+                     LSGKLLGAHVAHAGLIVFWAGAMNLFEVAHFVPEKPMYEQGLILLPHLATLGWGVGPG
+                     GEVVDTFPYFVSGVLHLISSAVLGFGGIYHALLGPETLEESFPFFGYVWKDRNKMTTI
+                     LGIHLILLGLGAFLLVFKALYFGGVYDTWAPGGGDVRRITNLTLSPSIIFGYLLKSPF
+                     GGEGWIVSVDDLEDIIGGHVWLGSICILGGIWHILTKPFAWARRAFVWSGEAYLSYSL
+                     GALSVFGFIACCFVWFNNTAYPSEFYGPTGPEASQAQAFTFLVRDQRLGANVGSAQGP
+                     TGLGKYLMRSPTGEIIFGGETMRFWDLRAPWLEPLRGPNGLDLSRLKKDIQPWQERRS
+                     AEYMTHAPLGSLNSVGGVATEINAVNYVSPRSWLATSHFVLGFFFFVGHLWHAGRARA
+                     AAAGFEKGIDRDFEPVLFMTPLN"
      gene            complement(39314..39406)
                      /gene="trnS-TGA"
+                     /locus_tag="GFC72_pgt012"
+                     /db_xref="GeneID:42266580"
+     tRNA            complement(39314..39406)
+                     /gene="trnS-TGA"
+                     /locus_tag="GFC72_pgt012"
+                     /product="tRNA-Ser"
+                     /db_xref="GeneID:42266580"
+     gene            39776..39964
+                     /gene="psbZ"
+                     /locus_tag="GFC72_pgp068"
+                     /db_xref="GeneID:42266649"
      CDS             39776..39964
                      /gene="psbZ"
+                     /locus_tag="GFC72_pgp068"
                      /codon_start=1
                      /transl_table=11
                      /product="photosystem II protein Z"
-     gene            39776..39964
-                     /gene="psbZ"
-     tRNA            40223..40293
-                     /gene="trnG-GCC"
-                     /product="tRNA-Gly"
+                     /protein_id="YP_009706497.1"
+                     /db_xref="GeneID:42266649"
+                     /translation="MTIAFQLAVFALIATSSILLISVPVVFASPEGWSSNKNVLFSGT
+                     SLWIGLVFLVGILNSLIY"
      gene            40223..40293
                      /gene="trnG-GCC"
-     tRNA            complement(40481..40554)
-                     /gene="trnfM-CAT"
-                     /product="tRNA-Met"
+                     /locus_tag="GFC72_pgt013"
+                     /db_xref="GeneID:42266630"
+     tRNA            40223..40293
+                     /gene="trnG-GCC"
+                     /locus_tag="GFC72_pgt013"
+                     /product="tRNA-Gly"
+                     /db_xref="GeneID:42266630"
      gene            complement(40481..40554)
                      /gene="trnfM-CAT"
+                     /locus_tag="GFC72_pgt014"
+                     /db_xref="GeneID:42266678"
+     tRNA            complement(40481..40554)
+                     /gene="trnfM-CAT"
+                     /locus_tag="GFC72_pgt014"
+                     /product="tRNA-Met"
+                     /db_xref="GeneID:42266678"
+     gene            complement(40709..41011)
+                     /gene="rps14"
+                     /locus_tag="GFC72_pgp067"
+                     /db_xref="GeneID:42266659"
      CDS             complement(40709..41011)
                      /gene="rps14"
+                     /locus_tag="GFC72_pgp067"
                      /codon_start=1
                      /transl_table=11
                      /product="ribosomal protein S14"
-     gene            complement(40709..41011)
-                     /gene="rps14"
+                     /protein_id="YP_009706498.1"
+                     /db_xref="GeneID:42266659"
+                     /translation="MARKSLIQREKKRQKLEEKYHLIRRSSKKEISKVSSLSEKWEIH
+                     RKLQSPPRNSAPIRLHRRCFLTGRPRANYRDFGLSGHVLREMVHACLLPGATRSSW"
+     gene            complement(41162..43366)
+                     /gene="psaB"
+                     /locus_tag="GFC72_pgp066"
+                     /db_xref="GeneID:42266619"
      CDS             complement(41162..43366)
                      /gene="psaB"
+                     /locus_tag="GFC72_pgp066"
                      /codon_start=1
                      /transl_table=11
                      /product="photosystem I P700 chlorophyll a apoprotein A2"
-     gene            complement(41162..43366)
-                     /gene="psaB"
+                     /protein_id="YP_009706499.1"
+                     /db_xref="GeneID:42266619"
+                     /translation="MALRFPRFSQGLAQDPTTRRIWFGIATAHDFESHDDMTEERLYQ
+                     NIFASHFGQLAIIFLWTSGNLFHVAWQGNFESWVQDPLHVRPIAHTIWDPHFGQPAVE
+                     AFTRGGALGPVNIAYSGVYQWWYTIGMRTNEDLYTGALFLLFISAISLVAGWLHLQPK
+                     WKPSVSWFKNAESRLNHHLSGLFGVSSLAWAGHLVHVAIPGSRGEYVRWNNFLDVLPY
+                     PQGLGPLFTGQWNLYAQNPDSSSHLFGTSQGAGTAILTLLGGFHPQTQSLWLTDIAHH
+                     HLAIAFIFLVAGHMYRTNFGIGHSIKDLLEAHIPPGGRLGRGHKGLYDTINNSIHFQL
+                     GLALASLGVVTSLVAQHMYSLPAYAFIAQDFTTQAALYTHHQYIAGFIMTGAFAHGAI
+                     FFIRDYNPQQNEDNVLARMLDHKEAIISHLSWASLFLGFHTLGLYVHNDVMLAFGTPE
+                     KQILIEPIFAQWIQSAHGKTSYGFDVLLSSTNGPAFNAGQSLWLPGWLNAINENRNSL
+                     FLTIGPGDFLVHHAIALGLHTTTLILVKGALDARGSKLMPDKKDFGYSFPCDGPGRGG
+                     TCDISAWDAFYLAVFWMLNTIGWVTFYWHWKHITLWQGNVSQFNESSTYLMGWLRDYL
+                     WLNSSQLINGYNPFGMNSLSVWAWMFLFGHLVWATGFMFLISWRGYWQELIETLAWAH
+                     ERTPLANLIRWRDKPVALSIVQARLVGLAHFSVGYIFTYAAFLIASTSGKFG"
+     gene            complement(43392..45644)
+                     /gene="psaA"
+                     /locus_tag="GFC72_pgp065"
+                     /db_xref="GeneID:42266566"
      CDS             complement(43392..45644)
                      /gene="psaA"
+                     /locus_tag="GFC72_pgp065"
                      /codon_start=1
                      /transl_table=11
                      /product="photosystem I P700 chlorophyll a apoprotein A1"
-     gene            complement(43392..45644)
-                     /gene="psaA"
-     CDS             join(complement(48237..48360,47278..47507,46301..46453))
+                     /protein_id="YP_009706500.1"
+                     /db_xref="GeneID:42266566"
+                     /translation="MIIRSPEPEVKILVDRDPIKTSFEEWARPGHFSRTIAKGPDTTT
+                     WIWNLHADAHDFDSHTSDLEEISRKVFSAHFGQLSIIFLWLSGMYFHGARFSNYEAWL
+                     SDPTHIGPSAQVVWPIVGQEILNGDVGGGFRGIQITSGFFQIWRASGITSELQLYCTA
+                     IGALVFAALMLFAGWFHYHKAAPKLAWFQDVESMLNHHLAGLLGLGSLSWAGHQVHVS
+                     LPINQFLNAGVDPKEIPLPHEFILNRDLLAQLYPSFAEGATPFFTLNWSKYAEFLTFR
+                     GGLDPVTGGLWLTDIAHHHLAIAILFLIAGHMYKTNWGIGHDLKDILEAHKGPFTGEG
+                     HKGLYEILTTSWHAQLALNLAMLGSLTIVVAHHMYSMPPYPYLATDYGTQLSLFTHHM
+                     WIGGFLIVGAAAHAAIFMVRDYDPTTRYNDLLDRVLRHRDAIISHLNWACIFLGFHSF
+                     GLYIHNDTMSALGRPQDMFSDTAIQLQPIFAQWIQNTHALAPSATAPGATTGTSLTWG
+                     GGDLVAVGGKVALLPIPLGTADFLVHHIHAFTIHVTVLILLKGVLFARSSRLIPDKAN
+                     LGFRFPCDGPGRGGTCQVSAWDHVFLGLFWMYNAISVVIFHFSWKMQSDVWGSISDQG
+                     VVTHITGGNFAQSSITINGWLRDFLWAQSSQVIQSYGSSLSAYGLFFLGAHFVWAFSL
+                     MFLFSGRGYWQELIESIVWAHNKLKVAPATQPRALSIIQGRAVGVTHYLLGGIATTWA
+                     FFLARIISVG"
+     gene            complement(46301..48360)
                      /gene="ycf3"
+                     /locus_tag="GFC72_pgp064"
+                     /db_xref="GeneID:42266562"
+     CDS             complement(join(46301..46453,47278..47507,48237..48360))
+                     /gene="ycf3"
+                     /locus_tag="GFC72_pgp064"
                      /codon_start=1
                      /transl_table=11
                      /product="photosystem I assembly protein Ycf3"
-     gene            complement(46301..48360)
-                     /gene="ycf3"
-     tRNA            49254..49340
-                     /gene="trnS-GGA"
-                     /product="tRNA-Ser"
+                     /protein_id="YP_009706501.1"
+                     /db_xref="GeneID:42266562"
+                     /translation="MPRSRINGNFIDKTSSIVANILLRIIPTTSGEKEAFTYYRDGMS
+                     AQSEGNYAEALQNYYEAMRPEIDPYDRSYILYNIGLIHTSNGEHTKALEYYFRALERN
+                     PFLPQASNNMAVICHYRGEEAIRQGDSEIAEAWFDQAAEYWKQAIALTPGNYIEAQNW
+                     LKITGRFE"
      gene            49254..49340
                      /gene="trnS-GGA"
+                     /locus_tag="GFC72_pgt015"
+                     /db_xref="GeneID:42266567"
+     tRNA            49254..49340
+                     /gene="trnS-GGA"
+                     /locus_tag="GFC72_pgt015"
+                     /product="tRNA-Ser"
+                     /db_xref="GeneID:42266567"
+     gene            complement(49634..50239)
+                     /gene="rps4"
+                     /locus_tag="GFC72_pgp063"
+                     /db_xref="GeneID:42266652"
      CDS             complement(49634..50239)
                      /gene="rps4"
+                     /locus_tag="GFC72_pgp063"
                      /codon_start=1
                      /transl_table=11
                      /product="ribosomal protein S4"
-     gene            complement(49634..50239)
-                     /gene="rps4"
-     tRNA            complement(50608..50680)
-                     /gene="trnT-TGT"
-                     /product="tRNA-Thr"
+                     /protein_id="YP_009706502.1"
+                     /db_xref="GeneID:42266652"
+                     /translation="MSRYRGPRFKKIRRLGALPGLTSKKPRSASDLRNQSRSGKRSQY
+                     RIRLEEKQKLRFHYGLTERQLLRYVRIAGKANGSTGQVLLQLLEMRLDNILFRLGMAS
+                     TIPGARQLVNHGHILVNGRLVDIPSYRCKPRDIITTKDKQRSRALIQNHMDSSSNAEL
+                     PKHLTLHSLQYKGVVNQIIDSKWVGLKINELLIVEYYSRQT"
      gene            complement(50608..50680)
                      /gene="trnT-TGT"
-     tRNA            join(51163..51198,51791..51840)
-                     /gene="trnL-TAA"
-                     /product="tRNA-Leu"
+                     /locus_tag="GFC72_pgt016"
+                     /db_xref="GeneID:42266603"
+     tRNA            complement(50608..50680)
+                     /gene="trnT-TGT"
+                     /locus_tag="GFC72_pgt016"
+                     /product="tRNA-Thr"
+                     /db_xref="GeneID:42266603"
      gene            51163..51840
                      /gene="trnL-TAA"
-     tRNA            52207..52279
-                     /gene="trnF-GAA"
-                     /product="tRNA-Phe"
+                     /locus_tag="GFC72_pgt017"
+                     /db_xref="GeneID:42266667"
+     tRNA            join(51163..51198,51791..51840)
+                     /gene="trnL-TAA"
+                     /locus_tag="GFC72_pgt017"
+                     /product="tRNA-Leu"
+                     /db_xref="GeneID:42266667"
      gene            52207..52279
                      /gene="trnF-GAA"
+                     /locus_tag="GFC72_pgt018"
+                     /db_xref="GeneID:42266599"
+     tRNA            52207..52279
+                     /gene="trnF-GAA"
+                     /locus_tag="GFC72_pgt018"
+                     /product="tRNA-Phe"
+                     /db_xref="GeneID:42266599"
+     gene            complement(52933..53409)
+                     /gene="ndhJ"
+                     /locus_tag="GFC72_pgp062"
+                     /db_xref="GeneID:42266668"
      CDS             complement(52933..53409)
                      /gene="ndhJ"
+                     /locus_tag="GFC72_pgp062"
                      /codon_start=1
                      /transl_table=11
                      /product="NADH dehydrogenase subunit J"
-     gene            complement(52933..53409)
-                     /gene="ndhJ"
+                     /protein_id="YP_009706503.1"
+                     /db_xref="GeneID:42266668"
+                     /translation="MQGRSSAWLVKHELVHRSLGFDYQGIETLQIKPEDWYSIAVISY
+                     VYGYNYLRSQCAYDVAPGGLLASVYHLTRIQYGVDQPEEVCIKVFVPRSNPRIPSVFW
+                     IWKSADFQERESYDMLGISYDNHPRMKRILMPESWVGWPLRKDYIAPNFYELQDAH"
+     gene            complement(53521..54198)
+                     /gene="ndhK"
+                     /locus_tag="GFC72_pgp061"
+                     /db_xref="GeneID:42266607"
      CDS             complement(53521..54198)
                      /gene="ndhK"
+                     /locus_tag="GFC72_pgp061"
                      /codon_start=1
                      /transl_table=11
                      /product="NADH dehydrogenase subunit K"
-     gene            complement(53521..54198)
-                     /gene="ndhK"
+                     /protein_id="YP_009706504.1"
+                     /db_xref="GeneID:42266607"
+                     /translation="MNSMEFPFLDRTTPNSVISTTLNDLSNWSRLSSLWPLLYGTSCC
+                     FIEFASLIGSRFDFDRYGLVPRSSPRQADLILTAGTVTMKMAPSLVRLYEQMPEPKYV
+                     IAMGACTITGGMFSTDSYSTVRGVDKLIPVDVYLPGCPPKPEAIIDAITKLRKKVSRE
+                     IYEDRTESQQENRCFTTNHKFHLGRSTRAVNYDQGLLYQSTSTSEIPSEAFFKYKSSV
+                     SSHELVN"
+     gene            complement(54252..54614)
+                     /gene="ndhC"
+                     /locus_tag="GFC72_pgp060"
+                     /db_xref="GeneID:42266600"
      CDS             complement(54252..54614)
                      /gene="ndhC"
+                     /locus_tag="GFC72_pgp060"
                      /codon_start=1
                      /transl_table=11
                      /product="NADH dehydrogenase subunit 3"
-     gene            complement(54252..54614)
-                     /gene="ndhC"
-     tRNA            join(complement(57246..57283,56632..56666))
-                     /gene="trnV-TAC"
-                     /product="tRNA-Val"
+                     /protein_id="YP_009706505.1"
+                     /db_xref="GeneID:42266600"
+                     /translation="MFLLHEYDIFWAFLMISSVIPILAFIISGVLAPISEGPEKLSSY
+                     ESGIEPIGDAWIQFRIRYYMFALVFVVFDVETVFLYPWAVSFDVLGVSVFIEALIFVL
+                     IPVVGSVYAWRKGALEWS"
      gene            complement(56632..57283)
                      /gene="trnV-TAC"
-     tRNA            57459..57531
-                     /gene="trnM-CAT"
-                     /product="tRNA-Met"
+                     /locus_tag="GFC72_pgt019"
+                     /db_xref="GeneID:42266615"
+     tRNA            complement(join(56632..56666,57246..57283))
+                     /gene="trnV-TAC"
+                     /locus_tag="GFC72_pgt019"
+                     /product="tRNA-Val"
+                     /db_xref="GeneID:42266615"
      gene            57459..57531
                      /gene="trnM-CAT"
+                     /locus_tag="GFC72_pgt020"
+                     /db_xref="GeneID:42266602"
+     tRNA            57459..57531
+                     /gene="trnM-CAT"
+                     /locus_tag="GFC72_pgt020"
+                     /product="tRNA-Met"
+                     /db_xref="GeneID:42266602"
+     gene            complement(57740..58144)
+                     /gene="atpE"
+                     /locus_tag="GFC72_pgp059"
+                     /db_xref="GeneID:42266669"
      CDS             complement(57740..58144)
                      /gene="atpE"
+                     /locus_tag="GFC72_pgp059"
                      /codon_start=1
                      /transl_table=11
                      /product="ATP synthase CF1 epsilon subunit"
-     gene            complement(57740..58144)
-                     /gene="atpE"
+                     /protein_id="YP_009706506.1"
+                     /db_xref="GeneID:42266669"
+                     /translation="MTLNLSVLTPNRIIWDSEVKEIILSTNSGQIGVLPNHAPVATAV
+                     DIGILRIRLDDQWLTMALMGGFARIGNNEITILVNDAEKGSDIDPQEAQQTLEIAEAN
+                     LRKAEGKRQVIEANLALRRARARVEAINAISY"
+     gene            complement(58141..59628)
+                     /gene="atpB"
+                     /locus_tag="GFC72_pgp058"
+                     /db_xref="GeneID:42266611"
      CDS             complement(58141..59628)
                      /gene="atpB"
+                     /locus_tag="GFC72_pgp058"
                      /codon_start=1
                      /transl_table=11
                      /product="ATP synthase CF1 beta subunit"
-     gene            complement(58141..59628)
-                     /gene="atpB"
+                     /protein_id="YP_009706507.1"
+                     /db_xref="GeneID:42266611"
+                     /translation="MRINPTTSGPGVSTKNLGRIAQIIGPVLDVAFPPGKMPNIYNSL
+                     VVKGRDTAGQEINVTCEVQQLLGNNRVRAVAMSATDGLMRGMEVIDTGAPLSVPVGGA
+                     TLGRIFNVLGEPVDNLGPVDTRTTSPIHRSAPAFIQLDTKLSIFETGIKVVDLLAPYR
+                     RGGKIGLFGGAGVGKTVLIMELINNIAKAHGGVSVFGGVGERTREGNDLYMEMKESGV
+                     INEENIAESKVALVYGQMNEPPGARMRVGLTALTMAEYFRDVNEQDVLLFIDNIFRFV
+                     QAGSEVSALLGRMPSAVGYQPTLSTEMGSLQERITSTKEGSITSIQAVYVPADDLTDP
+                     APATTFAHLDATTVLSRGLAAKGIYPAVDPLDSTSTMLQPRIVGEEHYETAQRVKQTL
+                     QRYKELQDIIAILGLDELSEEDRLTVARARKIERFLSQPFFVAEVFTGSPGKYVGLAE
+                     TIRGFQLILSGELDSFPEQAFYLVGNIDEATAKAMNLEVESKLKK"
+     gene            60429..61856
+                     /gene="rbcL"
+                     /locus_tag="GFC72_pgp057"
+                     /db_xref="GeneID:42266576"
      CDS             60429..61856
                      /gene="rbcL"
+                     /locus_tag="GFC72_pgp057"
                      /codon_start=1
                      /transl_table=11
                      /product="ribulose-1,5-bisphosphate carboxylase/oxygenase
                      large subunit"
-     gene            60429..61856
-                     /gene="rbcL"
+                     /protein_id="YP_009706508.1"
+                     /db_xref="GeneID:42266576"
+                     /translation="MSPKTETKASVGFKAGVKDYRLTYYTPDYETLATDILAAFRVTP
+                     QPGVPPEEAGAAVAAESSTGTWTTVWTDGLTSLDRYKGRCYHIEPVPGEENQYIAYVA
+                     YPLDLFEEGSVTNMFTSIVGNVFGFKALRALRLEDLRIPPAYSKTFQGPPHGIQVERD
+                     KLNKYGRPLLGCTIKPKLGLSAKNYGRAVYECLRGGLDFTKDDENVNSQPFMRWRDRF
+                     LFCAEALYKAQAETGEIKGHYLNATAGTSEEMLKRAACARELGVPIVMHDYLTGGFTA
+                     NTSLAHYCRDNGLLLHIHRAMHAVIDRQRNHGIHFRVLAKALRMSGGDHIHSGTVVGK
+                     LEGERDVTLGFVDLLRDDFIEKDRSRGIYFTQDWVSMPGVLPVASGGIHVWHMPALTE
+                     IFGDDSVLQFGGGTLGHPWGNAPGAVANRVALEACVQARNEGRDLAREGNEVIREASK
+                     WSPELAAACEVWKEIKFEFEAMDVL"
+     gene            62635..64086
+                     /gene="accD"
+                     /locus_tag="GFC72_pgp056"
+                     /db_xref="GeneID:42266578"
      CDS             62635..64086
                      /gene="accD"
+                     /locus_tag="GFC72_pgp056"
                      /codon_start=1
                      /transl_table=11
                      /product="acetyl-CoA carboxylase beta subunit"
-     gene            62635..64086
-                     /gene="accD"
+                     /protein_id="YP_009706509.1"
+                     /db_xref="GeneID:42266578"
+                     /translation="MEKWWLNSMLSNEDLGRRCGLSASLGPIGNTSGSEEPITNDNEK
+                     NIHSWSGRGSYSYSNVDYLLGLDGVKDIWSLISGDTFWVRDSNGDSYSVYFDIENKIF
+                     EIDTDSYFLGELESLFSSYLNLNSGSKDYNRYYDQYVYDTRHSWKNHINSCIDSYIRS
+                     ETNMDSCISNGSNNSSDNYIYSYICSDSERGSDRGSSNLKTSVSDFGRHSDLDRNLKY
+                     GHLWVQCENCYGLNYKKFFSSKMNICEQCGYHLKMSSSDRIELLIDPGTWDPMDENMV
+                     SIDPIEFHSEEEPYRDRINSYQIETGLAEAVQTGIGKLNGIPIAIGVMDFKFMGGSMG
+                     SVVGEKITRLIEYATDRSLPVIMVCASGGARMQEGSLSLMQMAKISSALYNYQSNKKL
+                     FYVSILTSPTTGGVTASFGMLGDIIIAEPNAYIAFAGKRVIEQTLKKTVPEGSQVAEY
+                     SFHKGLFDPIVPRNLLKGVPSELFQFHGFFPRP"
+     gene            64902..65012
+                     /gene="psaI"
+                     /locus_tag="GFC72_pgp055"
+                     /db_xref="GeneID:42266577"
      CDS             64902..65012
                      /gene="psaI"
+                     /locus_tag="GFC72_pgp055"
                      /codon_start=1
                      /transl_table=11
                      /product="photosystem I subunit VIII"
-     gene            64902..65012
-                     /gene="psaI"
+                     /protein_id="YP_009706510.1"
+                     /db_xref="GeneID:42266577"
+                     /translation="MTDLNLPSIFVPLVGLLFPAIAMASLFLHVQKNKIV"
+     gene            65461..66015
+                     /gene="ycf4"
+                     /locus_tag="GFC72_pgp054"
+                     /db_xref="GeneID:42266643"
      CDS             65461..66015
                      /gene="ycf4"
+                     /locus_tag="GFC72_pgp054"
                      /codon_start=1
                      /transl_table=11
                      /product="photosystem I assembly protein Ycf4"
-     gene            65461..66015
-                     /gene="ycf4"
+                     /protein_id="YP_009706511.1"
+                     /db_xref="GeneID:42266643"
+                     /translation="MNWRSEHIWIELITGSRKISNFCWACILFLGSLGFLLVGTSSYF
+                     GRNLISLFPSQQIIFFPQGIVMCFYGIAGLFISSYLWCTISWSVGSGYDKFDRKEGIV
+                     CIFRWGFPGRNRRIFFRFRIRDIRSIRMEVKEGLFPRRVLYMEIGGRGDIPLTRTNEN
+                     LTPREIEQKAAESAYFLRVPIEVF"
+     gene            67011..67700
+                     /gene="cemA"
+                     /locus_tag="GFC72_pgp053"
+                     /db_xref="GeneID:42266604"
      CDS             67011..67700
                      /gene="cemA"
+                     /locus_tag="GFC72_pgp053"
                      /codon_start=1
                      /transl_table=11
                      /product="envelope membrane protein"
-     gene            67011..67700
-                     /gene="cemA"
+                     /protein_id="YP_009706512.1"
+                     /db_xref="GeneID:42266604"
+                     /translation="MTKKKALNPLPYLASIVFLPWGISLSFNKSMEPWVTNWWNTSQS
+                     ETFLNDIQEKNILEGFIKLEELFLLDEMIKEYPETHIQKLRIGIHKETIQLVRMHNQD
+                     HIHIILHFSTNITCFAILSAYSILGNEELITLNSWVQEFLYNLSDTIKAFSILLLTDL
+                     CIGFHSPHAWELMIGSFYKDFGFVQNDKIISGLVSTFPVILDTILKYWIFHYLNRVSP
+                     SLVVIYHSLNE"
+     gene            67909..68874
+                     /gene="petA"
+                     /locus_tag="GFC72_pgp052"
+                     /db_xref="GeneID:42266598"
      CDS             67909..68874
                      /gene="petA"
+                     /locus_tag="GFC72_pgp052"
                      /codon_start=1
                      /transl_table=11
                      /product="cytochrome f"
-     gene            67909..68874
-                     /gene="petA"
+                     /protein_id="YP_009706513.1"
+                     /db_xref="GeneID:42266598"
+                     /translation="MQKNRNTFSWVKEQMTRCISVSMMIYVITRASISNAYPIFAQQG
+                     YENPREATGRIVCANCHLASKPVDIEVPQAVLPDTVFEAVVRIPYDMQLKQVLANGKK
+                     GGLNVGAVLILPEGFELAPPDRISPEMKERMGNLSFQSYRPNKKNILVVGPVPGQKYS
+                     EIVFPILSPDPATKKEVHFLKYPIYIGGNRGRGQIYPDGSKSNNTVYNASAAGIVSKI
+                     VRKEKGGYEITIADASNGQQTVDIIPRGPELLVSEGEYIKLDQPLTSNPNVGGFGQGD
+                     AEIVLQDPLRIQGLLFFLVSVILAQIFLVLKKKQFEKVQLAEMNF"
+     gene            complement(70093..70215)
+                     /gene="psbJ"
+                     /locus_tag="GFC72_pgp051"
+                     /db_xref="GeneID:42266591"
      CDS             complement(70093..70215)
                      /gene="psbJ"
+                     /locus_tag="GFC72_pgp051"
                      /codon_start=1
                      /transl_table=11
                      /product="photosystem II protein J"
-     gene            complement(70093..70215)
-                     /gene="psbJ"
-     CDS             complement(70332..70448)
-                     /gene="psbL"
-                     /exception="RNA editing"
-                     /transl_table=11
-                     /product="photosystem II protein L"
+                     /protein_id="YP_009706514.1"
+                     /db_xref="GeneID:42266591"
+                     /translation="MADTTGRIPLWLIGTVTGIPVIGLVGVFFYGSYSGLGSSL"
      gene            complement(70332..70448)
                      /gene="psbL"
+                     /locus_tag="GFC72_pgp050"
+                     /db_xref="GeneID:42266635"
+     CDS             complement(70332..70448)
+                     /gene="psbL"
+                     /locus_tag="GFC72_pgp050"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="photosystem II protein L"
+                     /protein_id="YP_009706515.1"
+                     /db_xref="GeneID:42266635"
+                     /translation="MTQSNPNEQNVELNRTSLYWGLLLIFVLAVLFSNYFFN"
+     gene            complement(70480..70599)
+                     /gene="psbF"
+                     /locus_tag="GFC72_pgp049"
+                     /db_xref="GeneID:42266639"
      CDS             complement(70480..70599)
                      /gene="psbF"
+                     /locus_tag="GFC72_pgp049"
                      /codon_start=1
                      /transl_table=11
                      /product="photosystem II protein VI"
-     gene            complement(70480..70599)
-                     /gene="psbF"
+                     /protein_id="YP_009706516.1"
+                     /db_xref="GeneID:42266639"
+                     /translation="MTIDRTYPIFTVRWLAVHGLAVPTVSFLGSISAMQFIQR"
+     gene            complement(70609..70860)
+                     /gene="psbE"
+                     /locus_tag="GFC72_pgp048"
+                     /db_xref="GeneID:42266638"
      CDS             complement(70609..70860)
                      /gene="psbE"
+                     /locus_tag="GFC72_pgp048"
                      /codon_start=1
                      /transl_table=11
                      /product="photosystem II protein V"
-     gene            complement(70609..70860)
-                     /gene="psbE"
+                     /protein_id="YP_009706517.1"
+                     /db_xref="GeneID:42266638"
+                     /translation="MSGSTGERAFADIITSIRYWVIHSITIPSLFIAGWSFVSTGLAY
+                     DVFGSPRPNEYFTESRQGIPLITGRFDSLEQLDEFSRSF"
+     gene            72203..72298
+                     /gene="petL"
+                     /locus_tag="GFC72_pgp047"
+                     /db_xref="GeneID:42266624"
      CDS             72203..72298
                      /gene="petL"
+                     /locus_tag="GFC72_pgp047"
                      /codon_start=1
                      /transl_table=11
                      /product="cytochrome b6/f complex subunit VI"
-     gene            72203..72298
-                     /gene="petL"
+                     /protein_id="YP_009706518.1"
+                     /db_xref="GeneID:42266624"
+                     /translation="MPTIASYFGFLLTASTITPALFIGLSKIRLI"
+     gene            72497..72610
+                     /gene="petG"
+                     /locus_tag="GFC72_pgp046"
+                     /db_xref="GeneID:42266648"
      CDS             72497..72610
                      /gene="petG"
+                     /locus_tag="GFC72_pgp046"
                      /codon_start=1
                      /transl_table=11
                      /product="cytochrome b6/f complex subunit V"
-     gene            72497..72610
-                     /gene="petG"
-     tRNA            complement(72729..72802)
-                     /gene="trnW-CCA"
-                     /product="tRNA-Trp"
+                     /protein_id="YP_009706519.1"
+                     /db_xref="GeneID:42266648"
+                     /translation="MIEVFSFGIVLGLIPITLAGLFVTAYLQYRRGDQLDF"
      gene            complement(72729..72802)
                      /gene="trnW-CCA"
-     tRNA            complement(72947..73020)
-                     /gene="trnP-TGG"
-                     /product="tRNA-Pro"
+                     /locus_tag="GFC72_pgt021"
+                     /db_xref="GeneID:42266640"
+     tRNA            complement(72729..72802)
+                     /gene="trnW-CCA"
+                     /locus_tag="GFC72_pgt021"
+                     /product="tRNA-Trp"
+                     /db_xref="GeneID:42266640"
      gene            complement(72947..73020)
                      /gene="trnP-TGG"
+                     /locus_tag="GFC72_pgt022"
+                     /db_xref="GeneID:42266660"
+     tRNA            complement(72947..73020)
+                     /gene="trnP-TGG"
+                     /locus_tag="GFC72_pgt022"
+                     /product="tRNA-Pro"
+                     /db_xref="GeneID:42266660"
+     gene            73432..73566
+                     /gene="psaJ"
+                     /locus_tag="GFC72_pgp045"
+                     /db_xref="GeneID:42266661"
      CDS             73432..73566
                      /gene="psaJ"
+                     /locus_tag="GFC72_pgp045"
                      /codon_start=1
                      /transl_table=11
                      /product="photosystem I subunit IX"
-     gene            73432..73566
-                     /gene="psaJ"
+                     /protein_id="YP_009706520.1"
+                     /db_xref="GeneID:42266661"
+                     /translation="MRDIKTYLSVAPVLTTLWFGSLAGLLIEINRLFPDALTFPFFSF
+                     "
+     gene            74026..74232
+                     /gene="rpl33"
+                     /locus_tag="GFC72_pgp044"
+                     /db_xref="GeneID:42266633"
      CDS             74026..74232
                      /gene="rpl33"
+                     /locus_tag="GFC72_pgp044"
                      /codon_start=1
                      /transl_table=11
                      /product="ribosomal protein L33"
-     gene            74026..74232
-                     /gene="rpl33"
+                     /protein_id="YP_009706521.1"
+                     /db_xref="GeneID:42266633"
+                     /translation="MPKGKNPRVTVILECTSCVRNGANKKKESPGISRYITQKNRHNT
+                     PGRLELKKFCPYCYKHTIHGEIKK"
+     gene            74375..74680
+                     /gene="rps18"
+                     /locus_tag="GFC72_pgp043"
+                     /db_xref="GeneID:42266629"
      CDS             74375..74680
                      /gene="rps18"
+                     /locus_tag="GFC72_pgp043"
                      /codon_start=1
                      /transl_table=11
                      /product="ribosomal protein S18"
-     gene            74375..74680
-                     /gene="rps18"
+                     /protein_id="YP_009706522.1"
+                     /db_xref="GeneID:42266629"
+                     /translation="MDKFKRPFRKSKRSFRRRLPPIGLGDRIDYRNMSLISRFISEQG
+                     KILPRRVNRLTLKQQRLITIAIKQARILSLLPFLNNEKQFERAESISRTTGTRTRKK"
+     gene            complement(74967..75314)
+                     /gene="rpl20"
+                     /locus_tag="GFC72_pgp042"
+                     /db_xref="GeneID:42266617"
      CDS             complement(74967..75314)
                      /gene="rpl20"
+                     /locus_tag="GFC72_pgp042"
                      /codon_start=1
                      /transl_table=11
                      /product="ribosomal protein L20"
-     gene            complement(74967..75314)
-                     /gene="rpl20"
+                     /protein_id="YP_009706523.1"
+                     /db_xref="GeneID:42266617"
+                     /translation="MTRVRRGYIARRRRRKIRLFASTFRGAHSRLTRTATQQKIRALV
+                     SSHRGRGRQKRDFRRLWITRINAVTRENGVPYSRLIHDLRKRQLLLNRKILAQIAISN
+                     RNCLYMISNDIIK"
+     gene            join(complement(76059..76172),146244..147041)
+                     /gene="rps12"
+                     /locus_tag="GFC72_pgp040"
+                     /trans_splicing
+                     /db_xref="GeneID:42266616"
      CDS             join(complement(76059..76172),146244..146475,
                      147016..147041)
                      /gene="rps12"
+                     /locus_tag="GFC72_pgp040"
+                     /trans_splicing
                      /codon_start=1
                      /transl_table=11
                      /product="ribosomal protein S12"
-     CDS             join(complement(76059..76172,104932..105163,104366..104391))
-                     /gene="rps12"
-                     /codon_start=1
-                     /transl_table=11
-                     /product="ribosomal protein S12"
-     gene            join(complement(76059..76172),146244..147041)
-                     /gene="rps12"
-     gene            join(complement(76059..76172,104366..105163))
-                     /gene="rps12"
-     CDS             join(complement(78235..78305,77184..77475,76306..76551))
+                     /protein_id="YP_009706524.1"
+                     /db_xref="GeneID:42266616"
+                     /translation="MPTIKQLIRNTRQPMRNVTKSPALRGCPQRRGTCTRVYTITPKK
+                     PNSALRKVARVRLTSGFEITAYIPGIGHNLQEHSVVLVRGGRVKDLPGVRYHIVRGTL
+                     DAVGVKDRQQGRSKYGVKKPK"
+     gene            complement(76306..78305)
                      /gene="clpP"
+                     /locus_tag="GFC72_pgp039"
+                     /db_xref="GeneID:42266597"
+     CDS             complement(join(76306..76551,77184..77475,78235..78305))
+                     /gene="clpP"
+                     /locus_tag="GFC72_pgp039"
                      /codon_start=1
                      /transl_table=11
                      /product="ATP-dependent Clp protease proteolytic subunit"
-     gene            complement(76306..78305)
-                     /gene="clpP"
+                     /protein_id="YP_009706525.1"
+                     /db_xref="GeneID:42266597"
+                     /translation="MPIGVPKVPFRSPGEEDAVWVDIYNRLHRERLLFLGQGVDSEIS
+                     NQLVGLMVYLSMEDNTRDLYLFINSPGGWVIPGIAIYDAMQIVPPDVHTICMGLAASM
+                     GSFILVGGEFTKRLAFPHARVMIHQPASSFYEAQAGEFILEAEELLKLREILTRVYVQ
+                     RTGKPLWVVSEDMERDVFMSATEAQAHGIVDLVAVENSADFV"
+     gene            78759..80285
+                     /gene="psbB"
+                     /locus_tag="GFC72_pgp038"
+                     /db_xref="GeneID:42266551"
      CDS             78759..80285
                      /gene="psbB"
+                     /locus_tag="GFC72_pgp038"
                      /codon_start=1
                      /transl_table=11
                      /product="photosystem II 47 kDa protein"
-     gene            78759..80285
-                     /gene="psbB"
+                     /protein_id="YP_009706526.1"
+                     /db_xref="GeneID:42266551"
+                     /translation="MGLPWYRVHTVVLNDPGRLLSVHIMHTALVSGWAGSMALYELAV
+                     FDPSDPVLDPMWRQGMFVIPFMTRLGITNSWGGWSITGGTITNPGIWSYEGVAGAHIV
+                     FSGLCFLAAIWHWVYWDLEIFCDERTGKPSLDLPKIFGIHLFLSGVACFGFGAFHVTG
+                     LYGPGIWVSDPYGLTGKVQPVSPSWGAEGFDPFVPGGIASHHIAAGTLGILAGLFHLS
+                     VRPPQRLYKALRMGNIETVLSSSIAAVFFAAFVVAGTMWYGSATTPIELFGPTRYQWD
+                     QGYFQQEIYRRVNAGLAENLSLSESWSKIPDKLAFYDYIGNNPAKGGLFRAGSMDNGD
+                     GIAVGWLGHPIFRDKEGHELFVRRMPTFFETFPVVLVDGDGIVRADVPFRRAESKYSV
+                     EQVGVTVEFYGGELDGVSYNDPATVKKYARRAQLGEIFELDRATLKSDGVFRSSPRGW
+                     FTFGHASFALLFFFGHIWHGARTLFRDVFAGIDPDLDAQVEFGAFQKLGDPTTRRQVV
+                     "
+     gene            80455..80562
+                     /gene="psbT"
+                     /locus_tag="GFC72_pgp037"
+                     /db_xref="GeneID:42266569"
      CDS             80455..80562
                      /gene="psbT"
+                     /locus_tag="GFC72_pgp037"
                      /codon_start=1
                      /transl_table=11
                      /product="photosystem II protein T"
-     gene            80455..80562
-                     /gene="psbT"
+                     /protein_id="YP_009706527.1"
+                     /db_xref="GeneID:42266569"
+                     /translation="MEALVYTFLLVSTLGIIFFAIFFREPPKVPNKKMK"
+     gene            complement(80621..80752)
+                     /gene="psbN"
+                     /locus_tag="GFC72_pgp036"
+                     /db_xref="GeneID:42266644"
      CDS             complement(80621..80752)
                      /gene="psbN"
+                     /locus_tag="GFC72_pgp036"
                      /codon_start=1
                      /transl_table=11
                      /product="photosystem II protein N"
-     gene            complement(80621..80752)
-                     /gene="psbN"
+                     /protein_id="YP_009706528.1"
+                     /db_xref="GeneID:42266644"
+                     /translation="METATLVAISISGLLVSFTGYALYTAFGQPSQQLRDPFEEHGD"
+     gene            80859..81080
+                     /gene="psbH"
+                     /locus_tag="GFC72_pgp035"
+                     /db_xref="GeneID:42266634"
      CDS             80859..81080
                      /gene="psbH"
+                     /locus_tag="GFC72_pgp035"
                      /codon_start=1
                      /transl_table=11
                      /product="photosystem II protein H"
-     gene            80859..81080
-                     /gene="psbH"
+                     /protein_id="YP_009706529.1"
+                     /db_xref="GeneID:42266634"
+                     /translation="MATQTIEGSSRSGPRRTIIGDLLKPLNSEYGKVAPGWGTTPFMG
+                     VAMALFAVFLSIILEIYNSSVLLDGISLS"
+     gene            81206..82630
+                     /gene="petB"
+                     /locus_tag="GFC72_pgp034"
+                     /db_xref="GeneID:42266628"
      CDS             join(81206..81211,81989..82630)
                      /gene="petB"
+                     /locus_tag="GFC72_pgp034"
                      /codon_start=1
                      /transl_table=11
                      /product="cytochrome b6"
-     gene            81206..82630
-                     /gene="petB"
+                     /protein_id="YP_009706530.1"
+                     /db_xref="GeneID:42266628"
+                     /translation="MSKVYDWFEERLEIQAIADDITSKYVPPHVNIFHCLGGITLTCF
+                     LVQVATGFAMTFYYRPTVTEAFASVQYIMTEANFGWLIRSVHRWSASMMVLMMILHVF
+                     RVYLTGGFKKPRELTWVTGVVLAVLTASFGVTGYSLPWDQIGYWAVKIVTGVPEAIPV
+                     VGSPLVELLRGSASVGQSTLTRFYSLHTFVLPLLTAVFMLMHFSMIRKQGISGPL"
+     gene            82824..84050
+                     /gene="petD"
+                     /locus_tag="GFC72_pgp033"
+                     /db_xref="GeneID:42266579"
      CDS             join(82824..82831,83477..84050)
                      /gene="petD"
+                     /locus_tag="GFC72_pgp033"
                      /codon_start=1
                      /transl_table=11
                      /product="cytochrome b6/f complex subunit IV"
-     gene            82824..84050
-                     /gene="petD"
+                     /protein_id="YP_009706531.1"
+                     /db_xref="GeneID:42266579"
+                     /translation="MGVTKKPDLNDPVLRAKLAKGMGHNYYGEPAWPNDLLYIFPVVI
+                     LGTIACTVGLAVLEPSMIGEPADPFATPLEILPEWYFFPVFQILRTVPNKLLGVLLMV
+                     SVPAGLLTVPFLENVNKFQNPFRRPVATTVFLIGTAVALWLGIGATLPIDKSLTLGLF
+                     QIQIDLEILRRGITMYLVRHTSKLILPRYISFT"
+     gene            complement(84450..85457)
+                     /gene="rpoA"
+                     /locus_tag="GFC72_pgp032"
+                     /db_xref="GeneID:42266582"
      CDS             complement(84450..85457)
                      /gene="rpoA"
+                     /locus_tag="GFC72_pgp032"
                      /codon_start=1
                      /transl_table=11
                      /product="RNA polymerase alpha subunit"
-     gene            complement(84450..85457)
-                     /gene="rpoA"
+                     /protein_id="YP_009706532.1"
+                     /db_xref="GeneID:42266582"
+                     /translation="MVREEVPVSTRTLQWKCVESRADSKRLYYGRFVLSPLMKGQADT
+                     IGIAMRRALLGELEGTCITRAKSDKVPHEYSTIVGIEESVHEILMNLKKIVFRSDLYG
+                     TLDASICVRGPRHVTAQDIISPPSVEIVDTTQHIAILTEPVDLCIELKIERGRGYCMR
+                     TPNNYQDGSYPIDAVSMPVRNANHSIHSYGNGNEKQEILFLEIWTNGSLTPKEALYEA
+                     SRNLIDLFIPFLHAEEQDINIEDNLKRATVPFFTFHDGLDNMKREIILKRIFIDQSEL
+                     PPRTYNCLKKSNIHTLLNLLSKSQEDLMRIEHFRVEDVKQIFDILQKGFTIDLLKNKN
+                     F"
+     gene            complement(85533..85949)
+                     /gene="rps11"
+                     /locus_tag="GFC72_pgp031"
+                     /db_xref="GeneID:42266590"
      CDS             complement(85533..85949)
                      /gene="rps11"
+                     /locus_tag="GFC72_pgp031"
                      /codon_start=1
                      /transl_table=11
                      /product="ribosomal protein S11"
-     gene            complement(85533..85949)
-                     /gene="rps11"
+                     /protein_id="YP_009706533.1"
+                     /db_xref="GeneID:42266590"
+                     /translation="MTKPIPRIGSRRNSRISSRKSGGRTPIGVIHVQASFNNTIVTVT
+                     DPQGRVVSWSSAGTCGFKGTRRGTPFAAQTAAGNAIRTVVDQGMQRAEVMIKGPGLGR
+                     DAALRAIRRSGILLNFVRDVTPMPHNGCRPPKKRRV"
+     gene            complement(86098..86211)
+                     /gene="rpl36"
+                     /locus_tag="GFC72_pgp030"
+                     /db_xref="GeneID:42266610"
      CDS             complement(86098..86211)
                      /gene="rpl36"
+                     /locus_tag="GFC72_pgp030"
                      /codon_start=1
                      /transl_table=11
                      /product="ribosomal protein L36"
-     gene            complement(86098..86211)
-                     /gene="rpl36"
+                     /protein_id="YP_009706534.1"
+                     /db_xref="GeneID:42266610"
+                     /translation="MKIRASVRKICEKCRLIRRRGRIIVICSNPKHKQRQG"
+     gene            complement(86324..86557)
+                     /gene="infA"
+                     /locus_tag="GFC72_pgp029"
+                     /db_xref="GeneID:42266641"
      CDS             complement(86324..86557)
                      /gene="infA"
+                     /locus_tag="GFC72_pgp029"
                      /codon_start=1
                      /transl_table=11
                      /product="translation initiation factor 1"
-     gene            complement(86324..86557)
-                     /gene="infA"
+                     /protein_id="YP_009706535.1"
+                     /db_xref="GeneID:42266641"
+                     /translation="MKEQKLIHEGLITESLPNGMFWVRLDNEDQVLGYVSGRIRRSFI
+                     RILPGDRVKIEVSRYDSTRGRIIYRLRNKDSND"
+     gene            complement(86679..87077)
+                     /gene="rps8"
+                     /locus_tag="GFC72_pgp028"
+                     /db_xref="GeneID:42266627"
      CDS             complement(86679..87077)
                      /gene="rps8"
+                     /locus_tag="GFC72_pgp028"
                      /codon_start=1
                      /transl_table=11
                      /product="ribosomal protein S8"
-     gene            complement(86679..87077)
-                     /gene="rps8"
+                     /protein_id="YP_009706536.1"
+                     /db_xref="GeneID:42266627"
+                     /translation="MGRDTIADIITYIRNADMDKKGTVRIASTNITENIVKILLREGF
+                     IENVRKHRENNKYFLVLTLRHRRNRKGAYRNILKRISRPGLRIYSNSQRIPRISGGIG
+                     VVVLSTSRGIMTDREARLEGIGGEILFYIW"
+     gene            complement(87231..87599)
+                     /gene="rpl14"
+                     /locus_tag="GFC72_pgp027"
+                     /db_xref="GeneID:42266612"
      CDS             complement(87231..87599)
                      /gene="rpl14"
+                     /locus_tag="GFC72_pgp027"
                      /codon_start=1
                      /transl_table=11
                      /product="ribosomal protein L14"
-     gene            complement(87231..87599)
-                     /gene="rpl14"
-     CDS             join(complement(88945..88953,87739..88137))
+                     /protein_id="YP_009706537.1"
+                     /db_xref="GeneID:42266612"
+                     /translation="MIQPQTHLNVADNSGARKLMCIRIIGASNYRYAHIGDVIVAVIK
+                     EAVPNMPLERSEVIRAVIVRTCKELKRDNGMIIRYDDNAAVVIDQEGNPKGTRVFGSI
+                     ARELRQLNFTKIVSLAPEVL"
+     gene            complement(87739..88953)
                      /gene="rpl16"
+                     /locus_tag="GFC72_pgp026"
+                     /db_xref="GeneID:42266614"
+     CDS             complement(join(87739..88137,88945..88953))
+                     /gene="rpl16"
+                     /locus_tag="GFC72_pgp026"
                      /codon_start=1
                      /transl_table=11
                      /product="ribosomal protein L16"
-     gene            complement(87739..88953)
-                     /gene="rpl16"
+                     /protein_id="YP_009706538.1"
+                     /db_xref="GeneID:42266614"
+                     /translation="MLSPKRTRFRKQHRGRMKGVSYRGNHICFGRYALQALEPAWITS
+                     RQIEAGRRAMARYARRGGKIWVRIFPDKPVTLRPAETRMGSGKGSPEYWVSVVKPDRI
+                     LYEMGGVSETVARAAMELAARKMPIRTKFVIEE"
+     gene            complement(89130..89786)
+                     /gene="rps3"
+                     /locus_tag="GFC72_pgp025"
+                     /db_xref="GeneID:42266583"
      CDS             complement(89130..89786)
                      /gene="rps3"
+                     /locus_tag="GFC72_pgp025"
                      /codon_start=1
                      /transl_table=11
                      /product="ribosomal protein S3"
-     gene            complement(89130..89786)
-                     /gene="rps3"
+                     /protein_id="YP_009706539.1"
+                     /db_xref="GeneID:42266583"
+                     /translation="MGQKINPLGFRLGTTQSHRSFWFAQPKNYSKGLQEDEKIRDCIK
+                     NYVQKHMRISSGFEGIARIDIKKRIDLIQVIIHIGFANMLIEGRARGIEELQTNVKKS
+                     FHSVNRRLNIAIARVPRPYGQPNILAEYIALQLKNRVSFRKAMKKAIELAEQADAKGI
+                     QVQIAGRLNGNEIARVEWIREGRVPLQTIRVKIDHCSYPVRTIYGVLGIKIWIFLDEE
+                     "
+     gene            complement(89843..90220)
+                     /gene="rpl22"
+                     /locus_tag="GFC72_pgp024"
+                     /db_xref="GeneID:42266601"
      CDS             complement(89843..90220)
                      /gene="rpl22"
+                     /locus_tag="GFC72_pgp024"
                      /codon_start=1
                      /transl_table=11
                      /product="ribosomal protein L22"
-     gene            complement(89843..90220)
-                     /gene="rpl22"
+                     /protein_id="YP_009706540.1"
+                     /db_xref="GeneID:42266601"
+                     /translation="MIKKTQGTEIRALARHIGMSAQKARRVIDQIRGCSYEQALMILE
+                     LMPYRACYPIFKLVYSAAANASHNRGLKEADLFISKAEVNEGVIVKRLKPQARGRSYP
+                     IKRPTCHITIVLSERPNFTLKNI"
+     gene            complement(90315..90593)
+                     /gene="rps19"
+                     /locus_tag="GFC72_pgp023"
+                     /db_xref="GeneID:42266613"
      CDS             complement(90315..90593)
                      /gene="rps19"
+                     /locus_tag="GFC72_pgp023"
                      /codon_start=1
                      /transl_table=11
                      /product="ribosomal protein S19"
-     gene            complement(90315..90593)
-                     /gene="rps19"
+                     /protein_id="YP_009706541.1"
+                     /db_xref="GeneID:42266613"
+                     /translation="MARSSKKNPFVANHLLSKIEKLNVEEEKRIIVTWSRASTIIPAM
+                     VGHTIAIHNGKEHLPIYITDRMVGRKLGEFAPTLTFRGHAKNDNRSRR"
      repeat_region   90645..116279
-                     /rpt_type="inverted"
-                     /standard_name="IRb repeat region"
-     CDS             join(complement(91784..92174,90683..91113))
+                     /rpt_type=inverted
+     gene            complement(90683..92174)
                      /gene="rpl2"
+                     /locus_tag="GFC72_pgp022"
+                     /db_xref="GeneID:42266622"
+     CDS             complement(join(90683..91113,91784..92174))
+                     /gene="rpl2"
+                     /locus_tag="GFC72_pgp022"
                      /codon_start=1
                      /transl_table=11
                      /product="ribosomal protein L2"
-     gene            complement(90683..92174)
-                     /gene="rpl2"
+                     /protein_id="YP_009706542.1"
+                     /db_xref="GeneID:42266622"
+                     /translation="MAIHLYKTSTPSTRKGAVDSQVKSNPRTNLIYGQHRCGKGRNAR
+                     GIITARHRGGGHKRLYRKIDFRRNEKDISGRIVTIEYDPNRNAYICLIHYGDGEKRYI
+                     LHPRGAIIGDTIVSGTEVPISMGNALPLTDMPLGTAIHNIEITLGKGGQLARAAGAVA
+                     KLIAKEGKSATLRLPSGEVRLISKNCSATVGQVGNVGVNQKSLGRAGSKCWLGKRPVV
+                     RGVVMNPVDHPHGGGEGRAPIGRKKPTTPWGYPALGRRSRKRNKYSDIFILRRRK"
+     gene            complement(92210..92491)
+                     /gene="rpl23"
+                     /locus_tag="GFC72_pgp021"
+                     /db_xref="GeneID:42266573"
      CDS             complement(92210..92491)
                      /gene="rpl23"
+                     /locus_tag="GFC72_pgp021"
                      /codon_start=1
                      /transl_table=11
                      /product="ribosomal protein L23"
-     gene            complement(92210..92491)
-                     /gene="rpl23"
-     tRNA            complement(92661..92734)
-                     /gene="trnI-CAT"
-                     /product="tRNA-Ile"
+                     /protein_id="YP_009706543.1"
+                     /db_xref="GeneID:42266573"
+                     /translation="MDGIKYAVFTEKSIRLLGNNQYTSNVESGSTRTEIKHWIELFFG
+                     VKVVAMNSHRLPGKGRRMGPIMRHTMHYRRMIITLQPGYSIPPLIEKRT"
      gene            complement(92661..92734)
                      /gene="trnI-CAT"
+                     /locus_tag="GFC72_pgt023"
+                     /db_xref="GeneID:42266620"
+     tRNA            complement(92661..92734)
+                     /gene="trnI-CAT"
+                     /locus_tag="GFC72_pgt023"
+                     /product="tRNA-Ile"
+                     /db_xref="GeneID:42266620"
+     gene            92819..99607
+                     /gene="ycf2"
+                     /locus_tag="GFC72_pgp020"
+                     /db_xref="GeneID:42266662"
      CDS             92819..99607
                      /gene="ycf2"
+                     /locus_tag="GFC72_pgp020"
                      /codon_start=1
                      /transl_table=11
                      /product="hypothetical chloroplast RF2"
-     gene            92819..99607
-                     /gene="ycf2"
-     tRNA            complement(100646..100726)
-                     /gene="trnL-CAA"
-                     /product="tRNA-Leu"
+                     /protein_id="YP_009706544.1"
+                     /db_xref="GeneID:42266662"
+                     /translation="MKRHQFKSCIFELREILREIKNSRYFLDSWTKFDSVVSFTHIFF
+                     HQERFVKLLGPQTWSVLLSRDSQGSTSNRYFTIKGVVLLVVAVLIYRINNRNMVERKN
+                     LYLMGLLPIPMNSIGPRNDTLEESFWSPNINRLIVSLLYLPKGKKISESCFMDPKEST
+                     WVLPITKKCIMPESNWGSRWWRNWIGKKRDSSCKISNETVAGIEISFKEKDIKYLEFI
+                     FVSYMDDPIRKDHGWELFDRVSPRKKRNIINLNSGQLFEILAKHLICYLMSAFREKRP
+                     IEVEGFLKQQGAEATIQSNDIEHVSHLFSRNKWDISLQNCAQFHVWQFHQDLFVSWGK
+                     NHHESDFLRNVSRENLIWLDNMWLVNKDRFFSKVRNVSSNIQYDSTRSIFVQVTDSSQ
+                     LKGSSDQSRENFDSISNEDSEYHTLINQTEIQQLKERLILWDPSSLQTERTEIESDRF
+                     PKYPSGYSSMSRLFTEREKQMNNHLFPEKIEEFIGNPTRSIRSFFSDRWSELHLVSNA
+                     TERFARDQKLLKKQQDVFSFVPSRRSEKKEMVDIFKIITYLQNTVSIHPISSDPGCDM
+                     VPRDEPDMDSSNKISFLNKNPFCDLFHLFHDRNKGRYTLHHDFESEERFQEMADLFTL
+                     SITEPDLVYHKGFAFSMDSYGLDQKKFLNEVFNSRDESKKNSLLVLPHIFYEENESFY
+                     RRIRKKWVRISCRNGLEDPKPKIVVFASNNIMEAVNQYRLIRNLIQIQYSTYGYIRNL
+                     SNRFSLMNRSDRNFEYGIQRDQIGNDTLNHITIMKYMINQHLSNVKKSQKKWFDPLIS
+                     RTERSMNRDPNAYRYKWSNGSKNFQEHLEHFVSEQKNRFQVVFDRLRINQHSIDWSKV
+                     IDKQDLSKSLHFFLSKSLLFLSKSLTFFFVSIGNIPIHRSEIHIYELKGPNDQLCNQL
+                     LESIGVQIVHLNKLKPFLLDDHDTSQRSKFLINGGTISAFLFNKIPKWMIDSLHTRNN
+                     RRKFFDNTDSYFSMISHDRDNWLNPVKPFHRSSLISSFYKANLLRFLNNPHHFCFYSN
+                     KRFPFYAEKTRIDNYDLTYGQFLHTYGQFLHISFIRNKIFSLCVGKKKHVFLERDTIS
+                     PIESQVSDIFIPNDFPQSGDETYNLYKSQPLSTYCQPLSDMNLSDSEGKNLHQYLSFN
+                     SNMGLIHTPCSEKYLPSAKKRNLCLKKCVEKGQMYRAFQRDSAFSNLSKWNLFQTYMP
+                     WFLTSAGCKYINFILLDTFSDPLPILSSSHKFVSFFYDITHGSDISWSILQIPLWAIL
+                     PQWNLISEISSKCLQNLLLPEEMIHRNNESPVPLKWTHLRSPNAREFLYSILFLLLVA
+                     GYLVRTHLLFISRVSSELQTELEKIKSLMIQSYMIELRKLLDRYPPPELNSFWLKNLF
+                     LVALEQLGDSLEEIRSSASGGNMLLGGGPTYGVKSIRSKKKDLNINLIDIIYLISIIP
+                     NPINPITFSRNTRHLSRTSKEIYSLIRKNVNSDWIDDQIESWVANSDLIDDEEREFLV
+                     QFSTLTTEKRIDQILLSLTHSDHLSKNDSGYQMIEQPGSIYLRYLVDIHKKYLMNYEF
+                     NRSCLAERRIFLAHYQTITYSQTPCGANSSHFPSHGKPFSLRLALPPSRGILVIGFIG
+                     TGRSYFVKYRVTNSYVPFITVFPNKFLDDNKGYLIDDIDIDDSDDIDIDDSDDIDDDL
+                     DTELLTMPNVLTMYMTPKIDRFEITLPLELAKAMSPCIIWIPNIHDLYVNESNYLSLG
+                     LLVNHLPRDCERCSTRNILVIASTHIPQKVDPALIAPNKSNTCIKIRRLLIPQQRKHF
+                     FILSYTRGFRLEKKMSHTNGFGSITMGSNARDLVALTNEVLSISITQKKSIIDTNTIR
+                     SALHRQTWDLRSQVRSVQDHEILFYQIGRAVAQNVLLSNCSIDPISIYMKKKSCKEGD
+                     SYLSKWYFELGTSMKKLTILLYLLSCSAGSVAQDLWSPPGPDEKNWITSYGFVENDSD
+                     LVHGLLESALVGYSRTECSQFDNDRVTLLLRSEPRNQLDMMQNGSCSIVDQRFLYEKY
+                     ESGFEEGEGEGTLDLQQIEEDEDLFNHIVWAPRLWRPHGNLFDCIERPNKLGFPYWVR
+                     SFRGKKIIYHKEDKLQENDSEFLQSGTVQYQTRDRSSKEQGFFRISQFIWDPADQFFF
+                     LFKDQPFVSVFSRREFFADEEMSKGLITSQTNPPTSIYKRWLIKNTQEKHFELLIHRQ
+                     RWLRTNTNSSLSNGSFRSNTLSESYQYLSNLFLSNNGTLLDQMTKTLLRKRWLFPDEM
+                     KHLIHAPGERFPIP"
      gene            complement(100646..100726)
                      /gene="trnL-CAA"
-     CDS             join(complement(102751..103527,101290..102045))
+                     /locus_tag="GFC72_pgt024"
+                     /db_xref="GeneID:42266553"
+     tRNA            complement(100646..100726)
+                     /gene="trnL-CAA"
+                     /locus_tag="GFC72_pgt024"
+                     /product="tRNA-Leu"
+                     /db_xref="GeneID:42266553"
+     gene            complement(101290..103527)
                      /gene="ndhB"
+                     /locus_tag="GFC72_pgp019"
+                     /db_xref="GeneID:42266654"
+     CDS             complement(join(101290..102045,102751..103527))
+                     /gene="ndhB"
+                     /locus_tag="GFC72_pgp019"
                      /codon_start=1
                      /transl_table=11
                      /product="NADH dehydrogenase subunit 2"
-     gene            complement(101290..103527)
-                     /gene="ndhB"
+                     /protein_id="YP_009706545.1"
+                     /db_xref="GeneID:42266654"
+                     /translation="MIWHVQNENFILDSTRIFMKAFHLLLFNGSFIFPECILIFGLIL
+                     LLMIDSTSDQKDTPWLYFISSTSLVMSITALLFRWREEPMISFSGNFQTNNFNEIFQF
+                     LILLCSTLCIPLSVEYIECTEMAITEFLLFVLTATLGGMFLCGANDLITIFVAPECFS
+                     LCSYLLSGYTKRDVRSNEATTKYLLMGGASSSILVYGFSWLYGSSGGEIELQEIVNGL
+                     INTQMYNSPGISIALISITVGIGFKLSPAPFHQWTPDVYEGSPTPVVAFLSVTSKVAA
+                     SASATRIFDIPFYFSSNEWHLLLEILAILSMILGNLIAITQTSMKRMLAYSSIGQIGY
+                     VIIGIIVGDSNDGYASMITYMLFYISMNLGTFACIVLFGLRTGTDNIRDYAGLYTKDP
+                     FSALSSALCLLSLGGIPPLAGFFGKLYLFWCGWQAGLYFLVSIGLLTSVVSIYYYLKI
+                     IKLLMTGRNKEITPHVRNYRRSPLRSNNSIELSMIVCVIASTIPGISMNPIIAIAQDT
+                     LF"
+     gene            complement(103846..104313)
+                     /gene="rps7"
+                     /locus_tag="GFC72_pgp018"
+                     /db_xref="GeneID:42266563"
      CDS             complement(103846..104313)
                      /gene="rps7"
+                     /locus_tag="GFC72_pgp018"
                      /codon_start=1
                      /transl_table=11
                      /product="ribosomal protein S7"
-     gene            complement(103846..104313)
-                     /gene="rps7"
-     tRNA            106967..107038
-                     /gene="trnV-GAC"
-                     /product="tRNA-Val"
+                     /protein_id="YP_009706546.1"
+                     /db_xref="GeneID:42266563"
+                     /translation="MSRRGTAEEKTAKSDPIYRNRLVNMLVNRILKHGKKSLAYQIIY
+                     RAVKKIQQKTETNPLSVLRQAIRGVTPNIAVKARRVGGSTHQVPIEIGSTQGKALAIR
+                     WLLGASRKRPGRNMAFKLSSELIDAAKGSGDAIRKKEETHRMAEANRAFAHFR"
      gene            106967..107038
                      /gene="trnV-GAC"
-     rRNA            107261..108751
-                     /gene="rrn16"
-                     /product="16S ribosomal RNA"
+                     /locus_tag="GFC72_pgt025"
+                     /db_xref="GeneID:42266608"
+     tRNA            106967..107038
+                     /gene="trnV-GAC"
+                     /locus_tag="GFC72_pgt025"
+                     /product="tRNA-Val"
+                     /db_xref="GeneID:42266608"
      gene            107261..108751
                      /gene="rrn16"
-     tRNA            join(109057..109093,110048..110082)
-                     /gene="trnI-GAT"
-                     /product="tRNA-Ile"
+                     /locus_tag="GFC72_pgr008"
+                     /db_xref="GeneID:42266674"
+     rRNA            107261..108751
+                     /gene="rrn16"
+                     /locus_tag="GFC72_pgr008"
+                     /product="16S ribosomal RNA"
+                     /db_xref="GeneID:42266674"
      gene            109057..110082
                      /gene="trnI-GAT"
-     tRNA            join(110146..110183,110985..111019)
-                     /gene="trnA-TGC"
-                     /product="tRNA-Ala"
+                     /locus_tag="GFC72_pgt026"
+                     /db_xref="GeneID:42266574"
+     tRNA            join(109057..109093,110048..110082)
+                     /gene="trnI-GAT"
+                     /locus_tag="GFC72_pgt026"
+                     /product="tRNA-Ile"
+                     /db_xref="GeneID:42266574"
      gene            110146..111019
                      /gene="trnA-TGC"
-     rRNA            111172..113988
-                     /gene="rrn23"
-                     /product="23S ribosomal RNA"
+                     /locus_tag="GFC72_pgt027"
+                     /db_xref="GeneID:42266588"
+     tRNA            join(110146..110183,110985..111019)
+                     /gene="trnA-TGC"
+                     /locus_tag="GFC72_pgt027"
+                     /product="tRNA-Ala"
+                     /db_xref="GeneID:42266588"
      gene            111172..113988
                      /gene="rrn23"
-     rRNA            114087..114189
-                     /gene="rrn4.5"
-                     /product="4.5S ribosomal RNA"
+                     /locus_tag="GFC72_pgr007"
+                     /db_xref="GeneID:42266593"
+     rRNA            111172..113988
+                     /gene="rrn23"
+                     /locus_tag="GFC72_pgr007"
+                     /product="23S ribosomal RNA"
+                     /db_xref="GeneID:42266593"
      gene            114087..114189
                      /gene="rrn4.5"
-     rRNA            114426..114546
-                     /gene="rrn5"
-                     /product="5S ribosomal RNA"
+                     /locus_tag="GFC72_pgr006"
+                     /db_xref="GeneID:42266559"
+     rRNA            114087..114189
+                     /gene="rrn4.5"
+                     /locus_tag="GFC72_pgr006"
+                     /product="4.5S ribosomal RNA"
+                     /db_xref="GeneID:42266559"
      gene            114426..114546
                      /gene="rrn5"
-     tRNA            114778..114851
-                     /gene="trnR-ACG"
-                     /product="tRNA-Arg"
+                     /locus_tag="GFC72_pgr005"
+                     /db_xref="GeneID:42266646"
+     rRNA            114426..114546
+                     /gene="rrn5"
+                     /locus_tag="GFC72_pgr005"
+                     /product="5S ribosomal RNA"
+                     /db_xref="GeneID:42266646"
      gene            114778..114851
                      /gene="trnR-ACG"
-     tRNA            complement(115418..115489)
-                     /gene="trnN-GTT"
-                     /product="tRNA-Asn"
+                     /locus_tag="GFC72_pgt028"
+                     /db_xref="GeneID:42266636"
+     tRNA            114778..114851
+                     /gene="trnR-ACG"
+                     /locus_tag="GFC72_pgt028"
+                     /product="tRNA-Arg"
+                     /db_xref="GeneID:42266636"
      gene            complement(115418..115489)
                      /gene="trnN-GTT"
+                     /locus_tag="GFC72_pgt029"
+                     /db_xref="GeneID:42266663"
+     tRNA            complement(115418..115489)
+                     /gene="trnN-GTT"
+                     /locus_tag="GFC72_pgt029"
+                     /product="tRNA-Asn"
+                     /db_xref="GeneID:42266663"
+     gene            complement(116268..118490)
+                     /gene="ndhF"
+                     /locus_tag="GFC72_pgp017"
+                     /db_xref="GeneID:42266675"
      CDS             complement(116268..118490)
                      /gene="ndhF"
+                     /locus_tag="GFC72_pgp017"
                      /codon_start=1
                      /transl_table=11
                      /product="NADH dehydrogenase subunit 5"
-     gene            complement(116268..118490)
-                     /gene="ndhF"
-     misc_feature    116280..135127
-                     /note="small single copy region SSC"
-     CDS             119584..119742
-                     /gene="rpl32"
-                     /transl_table=11
-                     /product="ribosomal protein L32"
+                     /protein_id="YP_009706547.1"
+                     /db_xref="GeneID:42266675"
+                     /translation="MERTYQYAWIIPFVPLLVTMLIGLGLLLIPTATKNIRRIWAFPA
+                     VLLLSIVMVFSTKLAIQQINGSSIYEYLWSWSITSDFSLEFGYLIDPLTSIMSILITT
+                     VGIMVLIYSDNYMSHDQGYLRFFAYMSFFNTSMLGLVTSPNLIQIHIFWELVGMCSYL
+                     LIGFWFTRPIAANACQKAFVTNRVGDFGLLLGILGFYLITGSFEFQDLFEIFNDSIIN
+                     NNEINSSFATLCAFLLFLGAVAKSAQFPLHVWLPDAMEGPTPISALIHAATMVAAGIF
+                     LVARLLPLFIGIPYIMNIISLIGVITVLLGATLALAQRDIKRSLAYSTMSQLGYIMLA
+                     LGIGSYRAALFHLITHAYSKALLFLGSGSIIHSMEPIVGYSPAKSQNMVLMGGLTKYM
+                     PITKTTFFLGTLSLCGIPPLACFWSKDEIINDSWLYSPIFATIACYTAGLTAFYMFRM
+                     YLLTFEGHLRSHFKNYSGHTNSSFYSISIWGQEGSKPVSSNLLLATRNNNDKSSFSSC
+                     PFSNTYKIAGYVRNMRSSFSTHFLNKDPYTLLYPHESDNTMLFPLLILAIFTLFVGCI
+                     GIRFGQEVMEVDILSKWLTPSMKLLHQNSTEDWYKFVTNAFYSVSIAYFGIFIASVLY
+                     GSVYSDRQNLYLINSFAKMGPKMRIRLEQIINVIYNWSYNRGYIDVYYEKVFIRGIRG
+                     LAQLAHSFDRRVIDGVTNGVGVASFFLGEGIKYIGGGRISSYLFLYLACVSIVLLLVK
+                     "
      gene            119584..119742
                      /gene="rpl32"
-     tRNA            120180..120259
-                     /gene="trnL-TAG"
-                     /product="tRNA-Leu"
+                     /locus_tag="GFC72_pgp016"
+                     /db_xref="GeneID:42266565"
+     CDS             119584..119742
+                     /gene="rpl32"
+                     /locus_tag="GFC72_pgp016"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="ribosomal protein L32"
+                     /protein_id="YP_009706548.1"
+                     /db_xref="GeneID:42266565"
+                     /translation="MAVPKKRTSISKKHIRRNFWKRKGYWAAVKAFSLAKSISTGYSK
+                     GFFVRQKK"
      gene            120180..120259
                      /gene="trnL-TAG"
+                     /locus_tag="GFC72_pgt030"
+                     /db_xref="GeneID:42266632"
+     tRNA            120180..120259
+                     /gene="trnL-TAG"
+                     /locus_tag="GFC72_pgt030"
+                     /product="tRNA-Leu"
+                     /db_xref="GeneID:42266632"
+     gene            120369..121295
+                     /gene="ccsA"
+                     /locus_tag="GFC72_pgp015"
+                     /db_xref="GeneID:42266656"
      CDS             120369..121295
                      /gene="ccsA"
+                     /locus_tag="GFC72_pgp015"
                      /codon_start=1
                      /transl_table=11
                      /product="cytochrome c biogenesis protein"
-     gene            120369..121295
-                     /gene="ccsA"
+                     /protein_id="YP_009706549.1"
+                     /db_xref="GeneID:42266656"
+                     /translation="MIFATLEHILTHISFSIISIVIPTHLMTLVYEIVGLCDLSEKGM
+                     IATFFCITGLLVTRWIYSGHVPLSDLYESLMFLSWSFSFIHIVPYFINYKNYFSTITA
+                     PSAILTQGFATSGLLTKMHQSAILVPALQSRWLMMHVSMMLLSYAALLCGSLLSITLL
+                     VITFRRNIDIIGKTNHLLISSFSFDEIQYLNVSFRNYHRYQLTQRLDHWSYRVIGLGF
+                     TLLTIGILSGAVWANEAWGSYWNWDPKETWAFITWTVFAIYSHTRTNKSLQGANSAIV
+                     ASMGFLIIWICYFGVNLLGRGLHSYGSFTLNI"
+     gene            complement(121629..123131)
+                     /gene="ndhD"
+                     /locus_tag="GFC72_pgp014"
+                     /db_xref="GeneID:42266592"
      CDS             complement(121629..123131)
                      /gene="ndhD"
+                     /locus_tag="GFC72_pgp014"
                      /exception="RNA editing"
+                     /note="RNA editing of an ACG to an AUG translation
+                     initiation codon"
                      /codon_start=1
                      /transl_table=11
                      /product="NADH dehydrogenase subunit 4"
-                     /note="RNA editing of an ACG to an AUG translation
-                     initiation codon"
-     gene            complement(121629..123131)
-                     /gene="ndhD"
+                     /protein_id="YP_009706550.1"
+                     /db_xref="GeneID:42266592"
+                     /translation="MSDFYWLTIIVVLPISAGSLIALLPHRGNKVVRWYTICICLFEL
+                     LLTTYVFCYHFQLDDPLIQLEEDFNWINLFDFHWRLGIDGLSIGPILLTGFITTLATS
+                     AARPVTRNSRLFHFLMLAMYSGQIGLFSSRDLLLFFIMWELELIPVYLLLSMWGGKKR
+                     LYSATKFILYTAGGSIFLLMGVLGMGLYGSNEPKLNFETLANQSYPVALEIIFYFGFL
+                     IAYAVKSPIIPLHTWLPDTHGEAHYSTCMLLAGILLKMGAYGLVRINMELLPHAHSIF
+                     SPWLMIVGTIQIIYAASTSLGQRNLKKRIAYSSVSHMGFIIIGISSITDAGLNGAILQ
+                     IISHGFIGAALFFLAGTSYDRIRLRYLNEMGGIAILMPRIFTMFSSFSMASLALPGMS
+                     GFVAELVIFLGIITSPKYLVVSKILITFVMAIGMILTPIYSLSMSRQMFYGYRLFNVP
+                     NSYFVDSGPREIFILICILLPIIGIGIYPDFVLSLSVDKVEAILSNYFHG"
+     gene            complement(123251..123496)
+                     /gene="psaC"
+                     /locus_tag="GFC72_pgp013"
+                     /db_xref="GeneID:42266572"
      CDS             complement(123251..123496)
                      /gene="psaC"
+                     /locus_tag="GFC72_pgp013"
                      /codon_start=1
                      /transl_table=11
                      /product="photosystem I subunit VII"
-     gene            complement(123251..123496)
-                     /gene="psaC"
+                     /protein_id="YP_009706551.1"
+                     /db_xref="GeneID:42266572"
+                     /translation="MSHSVKIYDTCIGCTQCVRACPTDVLEMIPWDGCKAKQIASAPR
+                     TEDCVGCKRCESACPTDFLSIRVYLWHETTRSMGLAY"
+     gene            complement(123894..124199)
+                     /gene="ndhE"
+                     /locus_tag="GFC72_pgp012"
+                     /db_xref="GeneID:42266626"
      CDS             complement(123894..124199)
                      /gene="ndhE"
+                     /locus_tag="GFC72_pgp012"
                      /codon_start=1
                      /transl_table=11
                      /product="NADH dehydrogenase subunit 4L"
-     gene            complement(123894..124199)
-                     /gene="ndhE"
+                     /protein_id="YP_009706552.1"
+                     /db_xref="GeneID:42266626"
+                     /translation="MMLEHVLVLSAYLFSIGIYGLITSRNMVRALMCLELILNAVNMN
+                     LVTFSDLFDSRQLKGDVFSIFVIAIAAAEAAIGPAIVSSIYRNRKSTRINQSNLLNK"
+     gene            complement(124508..125041)
+                     /gene="ndhG"
+                     /locus_tag="GFC72_pgp011"
+                     /db_xref="GeneID:42266618"
      CDS             complement(124508..125041)
                      /gene="ndhG"
+                     /locus_tag="GFC72_pgp011"
                      /codon_start=1
                      /transl_table=11
                      /product="NADH dehydrogenase subunit 6"
-     gene            complement(124508..125041)
-                     /gene="ndhG"
+                     /protein_id="YP_009706553.1"
+                     /db_xref="GeneID:42266618"
+                     /translation="MDLPAPIHDILLVSLGSGLIVGGLGVVLLTNPIYSAFSSGLVLV
+                     CISLFYIPSNSYFVAAAQLLIYVGAINVLILFAVMFMNGSEYYNSFHFWTIGDGFTSV
+                     VCTSIFFSLIATIPNTSWYGIIWTTRSNQIIEQDLTSNVQQIGIHLSTDFYLPFELIS
+                     IILLVSLVGAIAMARRE"
+     gene            complement(125375..125914)
+                     /gene="ndhI"
+                     /locus_tag="GFC72_pgp010"
+                     /db_xref="GeneID:42266606"
      CDS             complement(125375..125914)
                      /gene="ndhI"
+                     /locus_tag="GFC72_pgp010"
                      /codon_start=1
                      /transl_table=11
                      /product="NADH dehydrogenase subunit I"
-     gene            complement(125375..125914)
-                     /gene="ndhI"
-     CDS             join(complement(127453..127999,125993..126531))
+                     /protein_id="YP_009706554.1"
+                     /db_xref="GeneID:42266606"
+                     /translation="MFPMVTGFMNYGQQTVRAARYIGQSFMITLSHANRLPVTIQYPY
+                     EKSITSERFRGRIHFEFDKCIACEVCVRVCPIDLPVVDWRLETDIRKKRLLNYSIDFG
+                     ICIFCGNCVEYCPTNCLSMTEEYELSTYDRHELNYNQIALGRLPMSVIGDYTVRTIMN
+                     STQIKISMDKPLDSRTITN"
+     gene            complement(125993..127999)
                      /gene="ndhA"
+                     /locus_tag="GFC72_pgp009"
+                     /db_xref="GeneID:42266605"
+     CDS             complement(join(125993..126531,127453..127999))
+                     /gene="ndhA"
+                     /locus_tag="GFC72_pgp009"
                      /codon_start=1
                      /transl_table=11
                      /product="NADH dehydrogenase subunit 1"
-     gene            complement(125993..127999)
-                     /gene="ndhA"
+                     /protein_id="YP_009706555.1"
+                     /db_xref="GeneID:42266605"
+                     /translation="MIIEEAQAINSFFRSESSKEVYGLIWLLVPILTLVLGITIGVLV
+                     IVWLERKISAGIQRRIGPEYAGPLGILQALADGVKLLFKEDLLPSRGDIRLFSVGPSI
+                     AVVSILLSYSVIPFGHHLVLTDLSIGVSLWIAISSIAPIGLLMSGYGSNNKYSFSGGL
+                     RAAAQSISYEIPLTPCVLSISLLSNSSSTVDIVEAQSKYGFWGWNLWRQPIGFIVFII
+                     SSLAECERLPFDLPEAEEELVAGYQTEYSGIKFGLFYVASYLNLLVSSLFVTILYLGG
+                     WNLSIPYIPITELFEKNQTSEVFGTTISLLITLAKAYLFLFIPISTRWTLPRMRMDQL
+                     LNLGWKSLLPIALGNLLLTTSSQLVSL"
+     gene            complement(128001..129182)
+                     /gene="ndhH"
+                     /locus_tag="GFC72_pgp008"
+                     /db_xref="GeneID:42266568"
      CDS             complement(128001..129182)
                      /gene="ndhH"
+                     /locus_tag="GFC72_pgp008"
                      /codon_start=1
                      /transl_table=11
                      /product="NADH dehydrogenase subunit 7"
-     gene            complement(128001..129182)
-                     /gene="ndhH"
+                     /protein_id="YP_009706556.1"
+                     /db_xref="GeneID:42266568"
+                     /translation="MTVPDARKDLLVVNMGPHHPSMHGVLRLIVTLDGEDVIDCEPIL
+                     GYLHRGMEKIAENRTIIQYLPYVTRWDYLATMFTEAITVNAPEELGNIQVPKRASYIR
+                     VIMLELSRIASHLLWLGPFMADIGAQTPFFYIFRERELLYDLFEAATGMRMMHNYFRI
+                     GGVAADLPHGWIDKCLDFCDYFLTGVVEYQKLITRNPIFLERVEGVGFIGGEEAINWG
+                     LSGPMLRASGIQWDLRKVDRYECYDEFDWEVQWQKEGDSLARYLVRIGEMTESIKIIQ
+                     QALEGIPGGPYENLEFRRFAGTKDSELNDFEYRFISKKPSPSFELSKQELYVRVEAPK
+                     GELGIFLIGDNSVFPWRWKIRPPGFINLQILPQLVKRMKLADIMTILGSIDIIMGEVD
+                     R"
+     gene            complement(129295..129558)
+                     /gene="rps15"
+                     /locus_tag="GFC72_pgp007"
+                     /db_xref="GeneID:42266584"
      CDS             complement(129295..129558)
                      /gene="rps15"
+                     /locus_tag="GFC72_pgp007"
                      /codon_start=1
                      /transl_table=11
                      /product="ribosomal protein S15"
-     gene            complement(129295..129558)
-                     /gene="rps15"
+                     /protein_id="YP_009706557.1"
+                     /db_xref="GeneID:42266584"
+                     /translation="MVKNSSISVIPQEEKRGSVEFQVFSFTNKIKRLTSHLELHRRDY
+                     LSQRGLRKMLGKRQRLLVYLSKKNRVRYRELIGQLGIREPKTG"
+     gene            complement(129945..135569)
+                     /gene="ycf1"
+                     /locus_tag="GFC72_pgp006"
+                     /db_xref="GeneID:42266623"
      CDS             complement(129945..135569)
                      /gene="ycf1"
+                     /locus_tag="GFC72_pgp006"
                      /codon_start=1
                      /transl_table=11
                      /product="hypothetical chloroplast RF1"
-     gene            complement(129945..135569)
-                     /gene="ycf1"
-     repeat_region   complement(135128..160761)
-                     /rpt_type="inverted"
-                     /standard_name="IRa repeat region"
-     tRNA            135918..135989
-                     /gene="trnN-GTT"
-                     /product="tRNA-Asn"
+                     /protein_id="YP_009706558.1"
+                     /db_xref="GeneID:42266623"
+                     /translation="MILKYSLLGNLLLLWMNIVNSVVLVGLYYGFLTTFSIGPSYLLL
+                     LRTRVMKEGSEKEVSATTAFIMGQFIIFISTYYPPLHLALSRPHTLTVLVLPYLLLHF
+                     LFFWNNHKSLFDHRSTHGNFIPNLSIQYVFLNNLIFQLFNHFILPSSTLTRLVDISMF
+                     RCNNKILFVISSFFGWLIGHILLMKSIGLVLSWPWEKMRSNALFRSKKYLVSKWRNSV
+                     SQIFSILLFITCVCYLGRMPSPIITKKLKESSKGEEKKKTEKERDVEMETISKTKKIE
+                     QEEERSVEEDLSISLEGRWNPYKIYETEEIRLNGKEKDEFGFKEKEKNELLWVEKSLL
+                     SLLFDYQRWNRPLRYIENDRFSNAVRNEMSQYFFNTCASDGKQIISFTYPPSLSTFLE
+                     MIQKKMSFRTAEKLPAEDLSNEWVSTTEKQRDNLRNEFINRIEAIDKGSLILDVVEKR
+                     ARLCNDEEEQECLPKFYDPLLNGPYRGTIKKGYLYSIRNDSITSTQGSTKISWINKIH
+                     GILSKDYREFEHEIYKLDVKSSSAGIDDSSVSIGEFTEEAEEAEESRTRFKQFAFGGE
+                     EKEINSENQAEFLFDMVRADPNDQKISNQSIKIEEMKKKVPRWLYKLTADFDFEEEEE
+                     EEEEEDDEEEPTDDHGIRSRKAKRVVIYTDTDTDEDTDTNIINTTDSDQAKNSDKAKN
+                     SDQAKNSDQAKNSDQAKNSDQAEEHEMALIRYSQQSDFRRDIIKGSIRAQRRKTVTWE
+                     MFQTDVHSPLFLDRIDKTPLFSFDISRMMNLIFRNWMEEKSLKLKIKTSDYAGEGAKE
+                     EEHEEEKREYKRKEDKRQEDERIAIAEAWDTIPFAQAVRSSLLVTHSILRKYIVLPSL
+                     IIVKNIGRMLLFQFPEWYEDFKEWSREMHVKCTYNGVQLSETEFPKDWLTDGIQIKIL
+                     FPFSLKPWRRSKLRSHHRDLRKKQKNFCFLTVWGVETELPFGSPRKNPLFFEPIHKTL
+                     EKKIRKVKKKGFFIFKILKDNIKSFLEIFKEKIRWVIKIVLFIKSKVILFFRLTRIFD
+                     PIPNNKDSKISNRIIHESPIRIGSRDWANDSLTERKINDLADKTIKIRDQVEKIMKDK
+                     KKKITESQKYIWQISKKRSARLIPKWNSFMKSFIERIYMGILLCITNIYKINVQFFLD
+                     STLDSTKKILNRYTYNDETKEKDTNETNPNIIPFISTIKSLSTYTTTISSNSHSPIYC
+                     DLSSLSQAYVFYKLLQTQVSNKYKSESIFQYYGTYPFIKDRIKDYFHNYFHTRGISDS
+                     ESKHKKLRNSGMNEWKNWLRNHYQYNLSRAKWSRLAPLKWRNKVNQHRTIKNNDLQKL
+                     DSYEEKDQLIHSERKDFYKLGLLKSPSHTKKMKKHYRYDLLSYKYINYEYVKDSNIYG
+                     SPLQVNRHGEILSLSNYNTHKYKSFYVITINDCLEDKYIIDTDQNLDRKYFELRIIYF
+                     DPRNDIETRTSTDIGTFTNKNKTTKTGTNKKDLYIRIHQEIQTKQKEFFFDWMGMNKQ
+                     MLDRTISNLDPWFLPEFVPLYDRYRTNPWIIPIKLLLFDFNGNKTSDLYIDPKVKSNQ
+                     KERSNPKAESNKKEYLELENRNRDEKERQNQGNLISDTRNQKKDVGANSTGSDIKKRR
+                     KKKKLKSKKEAELDFLLKKYFLFQLQWGDSFNQRMTNNIKVYCLLLRLMDPSEIAISS
+                     IERGEMGLDVMLIHKDLSLPELIKRGIFIIEPVRLSTKWDGISIMYQTIAISLTHKVQ
+                     HQTNRGYQAKKHIDENYFNGSIACHGGVRVNGDNNNYYLLVPENILSPNHRREFRIIS
+                     RFNYRNRNVVNKNPVFFNRAKTNAQGFEKFVDRDKHFDTDTNNSLKWKVFLWPTHRLE
+                     DLACMNRYWFDTNNGSRFSMSRIHMYQRFGIR"
+     repeat_region   135128..160761
+                     /rpt_type=inverted
      gene            135918..135989
                      /gene="trnN-GTT"
-     tRNA            complement(136556..136629)
-                     /gene="trnR-ACG"
-                     /product="tRNA-Arg"
+                     /locus_tag="GFC72_pgt031"
+                     /db_xref="GeneID:42266555"
+     tRNA            135918..135989
+                     /gene="trnN-GTT"
+                     /locus_tag="GFC72_pgt031"
+                     /product="tRNA-Asn"
+                     /db_xref="GeneID:42266555"
      gene            complement(136556..136629)
                      /gene="trnR-ACG"
-     rRNA            complement(136861..136981)
-                     /gene="rrn5"
-                     /product="5S ribosomal RNA"
+                     /locus_tag="GFC72_pgt032"
+                     /db_xref="GeneID:42266676"
+     tRNA            complement(136556..136629)
+                     /gene="trnR-ACG"
+                     /locus_tag="GFC72_pgt032"
+                     /product="tRNA-Arg"
+                     /db_xref="GeneID:42266676"
      gene            complement(136861..136981)
                      /gene="rrn5"
-     rRNA            complement(137218..137320)
-                     /gene="rrn4.5"
-                     /product="4.5S ribosomal RNA"
+                     /locus_tag="GFC72_pgr004"
+                     /db_xref="GeneID:42266664"
+     rRNA            complement(136861..136981)
+                     /gene="rrn5"
+                     /locus_tag="GFC72_pgr004"
+                     /product="5S ribosomal RNA"
+                     /db_xref="GeneID:42266664"
      gene            complement(137218..137320)
                      /gene="rrn4.5"
-     rRNA            complement(137419..140235)
-                     /gene="rrn23"
-                     /product="23S ribosomal RNA"
+                     /locus_tag="GFC72_pgr003"
+                     /db_xref="GeneID:42266637"
+     rRNA            complement(137218..137320)
+                     /gene="rrn4.5"
+                     /locus_tag="GFC72_pgr003"
+                     /product="4.5S ribosomal RNA"
+                     /db_xref="GeneID:42266637"
      gene            complement(137419..140235)
                      /gene="rrn23"
-     tRNA            join(complement(141224..141261,140388..140422))
-                     /gene="trnA-TGC"
-                     /product="tRNA-Ala"
+                     /locus_tag="GFC72_pgr002"
+                     /db_xref="GeneID:42266647"
+     rRNA            complement(137419..140235)
+                     /gene="rrn23"
+                     /locus_tag="GFC72_pgr002"
+                     /product="23S ribosomal RNA"
+                     /db_xref="GeneID:42266647"
      gene            complement(140388..141261)
                      /gene="trnA-TGC"
-     tRNA            join(complement(142314..142350,141325..141359))
-                     /gene="trnI-GAT"
-                     /product="tRNA-Ile"
+                     /locus_tag="GFC72_pgt033"
+                     /db_xref="GeneID:42266560"
+     tRNA            complement(join(140388..140422,141224..141261))
+                     /gene="trnA-TGC"
+                     /locus_tag="GFC72_pgt033"
+                     /product="tRNA-Ala"
+                     /db_xref="GeneID:42266560"
      gene            complement(141325..142350)
                      /gene="trnI-GAT"
-     rRNA            complement(142656..144146)
-                     /gene="rrn16"
-                     /product="16S ribosomal RNA"
+                     /locus_tag="GFC72_pgt034"
+                     /db_xref="GeneID:42266594"
+     tRNA            complement(join(141325..141359,142314..142350))
+                     /gene="trnI-GAT"
+                     /locus_tag="GFC72_pgt034"
+                     /product="tRNA-Ile"
+                     /db_xref="GeneID:42266594"
      gene            complement(142656..144146)
                      /gene="rrn16"
-     tRNA            complement(144369..144440)
-                     /gene="trnV-GAC"
-                     /product="tRNA-Val"
+                     /locus_tag="GFC72_pgr001"
+                     /db_xref="GeneID:42266589"
+     rRNA            complement(142656..144146)
+                     /gene="rrn16"
+                     /locus_tag="GFC72_pgr001"
+                     /product="16S ribosomal RNA"
+                     /db_xref="GeneID:42266589"
      gene            complement(144369..144440)
                      /gene="trnV-GAC"
+                     /locus_tag="GFC72_pgt035"
+                     /db_xref="GeneID:42266575"
+     tRNA            complement(144369..144440)
+                     /gene="trnV-GAC"
+                     /locus_tag="GFC72_pgt035"
+                     /product="tRNA-Val"
+                     /db_xref="GeneID:42266575"
+     gene            147094..147561
+                     /gene="rps7"
+                     /locus_tag="GFC72_pgp005"
+                     /db_xref="GeneID:42266677"
      CDS             147094..147561
                      /gene="rps7"
+                     /locus_tag="GFC72_pgp005"
                      /codon_start=1
                      /transl_table=11
                      /product="ribosomal protein S7"
-     gene            147094..147561
-                     /gene="rps7"
+                     /protein_id="YP_009706559.1"
+                     /db_xref="GeneID:42266677"
+                     /translation="MSRRGTAEEKTAKSDPIYRNRLVNMLVNRILKHGKKSLAYQIIY
+                     RAVKKIQQKTETNPLSVLRQAIRGVTPNIAVKARRVGGSTHQVPIEIGSTQGKALAIR
+                     WLLGASRKRPGRNMAFKLSSELIDAAKGSGDAIRKKEETHRMAEANRAFAHFR"
+     gene            147880..150117
+                     /gene="ndhB"
+                     /locus_tag="GFC72_pgp004"
+                     /db_xref="GeneID:42266609"
      CDS             join(147880..148656,149362..150117)
                      /gene="ndhB"
+                     /locus_tag="GFC72_pgp004"
                      /codon_start=1
                      /transl_table=11
                      /product="NADH dehydrogenase subunit 2"
-     gene            147880..150117
-                     /gene="ndhB"
-     tRNA            150681..150761
-                     /gene="trnL-CAA"
-                     /product="tRNA-Leu"
+                     /protein_id="YP_009706560.1"
+                     /db_xref="GeneID:42266609"
+                     /translation="MIWHVQNENFILDSTRIFMKAFHLLLFNGSFIFPECILIFGLIL
+                     LLMIDSTSDQKDTPWLYFISSTSLVMSITALLFRWREEPMISFSGNFQTNNFNEIFQF
+                     LILLCSTLCIPLSVEYIECTEMAITEFLLFVLTATLGGMFLCGANDLITIFVAPECFS
+                     LCSYLLSGYTKRDVRSNEATTKYLLMGGASSSILVYGFSWLYGSSGGEIELQEIVNGL
+                     INTQMYNSPGISIALISITVGIGFKLSPAPFHQWTPDVYEGSPTPVVAFLSVTSKVAA
+                     SASATRIFDIPFYFSSNEWHLLLEILAILSMILGNLIAITQTSMKRMLAYSSIGQIGY
+                     VIIGIIVGDSNDGYASMITYMLFYISMNLGTFACIVLFGLRTGTDNIRDYAGLYTKDP
+                     FSALSSALCLLSLGGIPPLAGFFGKLYLFWCGWQAGLYFLVSIGLLTSVVSIYYYLKI
+                     IKLLMTGRNKEITPHVRNYRRSPLRSNNSIELSMIVCVIASTIPGISMNPIIAIAQDT
+                     LF"
      gene            150681..150761
                      /gene="trnL-CAA"
+                     /locus_tag="GFC72_pgt036"
+                     /db_xref="GeneID:42266564"
+     tRNA            150681..150761
+                     /gene="trnL-CAA"
+                     /locus_tag="GFC72_pgt036"
+                     /product="tRNA-Leu"
+                     /db_xref="GeneID:42266564"
+     gene            complement(151800..158588)
+                     /gene="ycf2"
+                     /locus_tag="GFC72_pgp003"
+                     /db_xref="GeneID:42266655"
      CDS             complement(151800..158588)
                      /gene="ycf2"
+                     /locus_tag="GFC72_pgp003"
                      /codon_start=1
                      /transl_table=11
                      /product="hypothetical chloroplast RF2"
-     gene            complement(151800..158588)
-                     /gene="ycf2"
-     tRNA            158673..158746
-                     /gene="trnI-CAT"
-                     /product="tRNA-Ile"
+                     /protein_id="YP_009706561.1"
+                     /db_xref="GeneID:42266655"
+                     /translation="MKRHQFKSCIFELREILREIKNSRYFLDSWTKFDSVVSFTHIFF
+                     HQERFVKLLGPQTWSVLLSRDSQGSTSNRYFTIKGVVLLVVAVLIYRINNRNMVERKN
+                     LYLMGLLPIPMNSIGPRNDTLEESFWSPNINRLIVSLLYLPKGKKISESCFMDPKEST
+                     WVLPITKKCIMPESNWGSRWWRNWIGKKRDSSCKISNETVAGIEISFKEKDIKYLEFI
+                     FVSYMDDPIRKDHGWELFDRVSPRKKRNIINLNSGQLFEILAKHLICYLMSAFREKRP
+                     IEVEGFLKQQGAEATIQSNDIEHVSHLFSRNKWDISLQNCAQFHVWQFHQDLFVSWGK
+                     NHHESDFLRNVSRENLIWLDNMWLVNKDRFFSKVRNVSSNIQYDSTRSIFVQVTDSSQ
+                     LKGSSDQSRENFDSISNEDSEYHTLINQTEIQQLKERLILWDPSSLQTERTEIESDRF
+                     PKYPSGYSSMSRLFTEREKQMNNHLFPEKIEEFIGNPTRSIRSFFSDRWSELHLVSNA
+                     TERFARDQKLLKKQQDVFSFVPSRRSEKKEMVDIFKIITYLQNTVSIHPISSDPGCDM
+                     VPRDEPDMDSSNKISFLNKNPFCDLFHLFHDRNKGRYTLHHDFESEERFQEMADLFTL
+                     SITEPDLVYHKGFAFSMDSYGLDQKKFLNEVFNSRDESKKNSLLVLPHIFYEENESFY
+                     RRIRKKWVRISCRNGLEDPKPKIVVFASNNIMEAVNQYRLIRNLIQIQYSTYGYIRNL
+                     SNRFSLMNRSDRNFEYGIQRDQIGNDTLNHITIMKYMINQHLSNVKKSQKKWFDPLIS
+                     RTERSMNRDPNAYRYKWSNGSKNFQEHLEHFVSEQKNRFQVVFDRLRINQHSIDWSKV
+                     IDKQDLSKSLHFFLSKSLLFLSKSLTFFFVSIGNIPIHRSEIHIYELKGPNDQLCNQL
+                     LESIGVQIVHLNKLKPFLLDDHDTSQRSKFLINGGTISAFLFNKIPKWMIDSLHTRNN
+                     RRKFFDNTDSYFSMISHDRDNWLNPVKPFHRSSLISSFYKANLLRFLNNPHHFCFYSN
+                     KRFPFYAEKTRIDNYDLTYGQFLHTYGQFLHISFIRNKIFSLCVGKKKHVFLERDTIS
+                     PIESQVSDIFIPNDFPQSGDETYNLYKSQPLSTYCQPLSDMNLSDSEGKNLHQYLSFN
+                     SNMGLIHTPCSEKYLPSAKKRNLCLKKCVEKGQMYRAFQRDSAFSNLSKWNLFQTYMP
+                     WFLTSAGCKYINFILLDTFSDPLPILSSSHKFVSFFYDITHGSDISWSILQIPLWAIL
+                     PQWNLISEISSKCLQNLLLPEEMIHRNNESPVPLKWTHLRSPNAREFLYSILFLLLVA
+                     GYLVRTHLLFISRVSSELQTELEKIKSLMIQSYMIELRKLLDRYPPPELNSFWLKNLF
+                     LVALEQLGDSLEEIRSSASGGNMLLGGGPTYGVKSIRSKKKDLNINLIDIIYLISIIP
+                     NPINPITFSRNTRHLSRTSKEIYSLIRKNVNSDWIDDQIESWVANSDLIDDEEREFLV
+                     QFSTLTTEKRIDQILLSLTHSDHLSKNDSGYQMIEQPGSIYLRYLVDIHKKYLMNYEF
+                     NRSCLAERRIFLAHYQTITYSQTPCGANSSHFPSHGKPFSLRLALPPSRGILVIGFIG
+                     TGRSYFVKYRVTNSYVPFITVFPNKFLDDNKGYLIDDIDIDDSDDIDIDDSDDIDDDL
+                     DTELLTMPNVLTMYMTPKIDRFEITLPLELAKAMSPCIIWIPNIHDLYVNESNYLSLG
+                     LLVNHLPRDCERCSTRNILVIASTHIPQKVDPALIAPNKSNTCIKIRRLLIPQQRKHF
+                     FILSYTRGFRLEKKMSHTNGFGSITMGSNARDLVALTNEVLSISITQKKSIIDTNTIR
+                     SALHRQTWDLRSQVRSVQDHEILFYQIGRAVAQNVLLSNCSIDPISIYMKKKSCKEGD
+                     SYLSKWYFELGTSMKKLTILLYLLSCSAGSVAQDLWSPPGPDEKNWITSYGFVENDSD
+                     LVHGLLESALVGYSRTECSQFDNDRVTLLLRSEPRNQLDMMQNGSCSIVDQRFLYEKY
+                     ESGFEEGEGEGTLDLQQIEEDEDLFNHIVWAPRLWRPHGNLFDCIERPNKLGFPYWVR
+                     SFRGKKIIYHKEDKLQENDSEFLQSGTVQYQTRDRSSKEQGFFRISQFIWDPADQFFF
+                     LFKDQPFVSVFSRREFFADEEMSKGLITSQTNPPTSIYKRWLIKNTQEKHFELLIHRQ
+                     RWLRTNTNSSLSNGSFRSNTLSESYQYLSNLFLSNNGTLLDQMTKTLLRKRWLFPDEM
+                     KHLIHAPGERFPIP"
      gene            158673..158746
                      /gene="trnI-CAT"
+                     /locus_tag="GFC72_pgt037"
+                     /db_xref="GeneID:42266554"
+     tRNA            158673..158746
+                     /gene="trnI-CAT"
+                     /locus_tag="GFC72_pgt037"
+                     /product="tRNA-Ile"
+                     /db_xref="GeneID:42266554"
+     gene            158916..159197
+                     /gene="rpl23"
+                     /locus_tag="GFC72_pgp002"
+                     /db_xref="GeneID:42266665"
      CDS             158916..159197
                      /gene="rpl23"
+                     /locus_tag="GFC72_pgp002"
                      /codon_start=1
                      /transl_table=11
                      /product="ribosomal protein L23"
-     gene            158916..159197
-                     /gene="rpl23"
+                     /protein_id="YP_009706562.1"
+                     /db_xref="GeneID:42266665"
+                     /translation="MDGIKYAVFTEKSIRLLGNNQYTSNVESGSTRTEIKHWIELFFG
+                     VKVVAMNSHRLPGKGRRMGPIMRHTMHYRRMIITLQPGYSIPPLIEKRT"
+     gene            159233..160724
+                     /gene="rpl2"
+                     /locus_tag="GFC72_pgp001"
+                     /db_xref="GeneID:42266621"
      CDS             join(159233..159623,160294..160724)
                      /gene="rpl2"
+                     /locus_tag="GFC72_pgp001"
                      /codon_start=1
                      /transl_table=11
                      /product="ribosomal protein L2"
-     gene            159233..160724
-                     /gene="rpl2"
+                     /protein_id="YP_009706563.1"
+                     /db_xref="GeneID:42266621"
+                     /translation="MAIHLYKTSTPSTRKGAVDSQVKSNPRTNLIYGQHRCGKGRNAR
+                     GIITARHRGGGHKRLYRKIDFRRNEKDISGRIVTIEYDPNRNAYICLIHYGDGEKRYI
+                     LHPRGAIIGDTIVSGTEVPISMGNALPLTDMPLGTAIHNIEITLGKGGQLARAAGAVA
+                     KLIAKEGKSATLRLPSGEVRLISKNCSATVGQVGNVGVNQKSLGRAGSKCWLGKRPVV
+                     RGVVMNPVDHPHGGGEGRAPIGRKKPTTPWGYPALGRRSRKRNKYSDIFILRRRK"
 ORIGIN      
         1 cgggaattga acccgcgcat ggtggatcca caatccacta ccttaatcca cttggctaca
        61 tccgccccta ctctgactca attaagagta agagtcatgt cttatttcgt ttttaatgta
@@ -3543,3 +4676,4 @@ ORIGIN
    160681 ggaataaata tagtgatatt tttattcttc gtcgccgtaa atagaaagaa aaaataatga
    160741 atgatgtgga tgggcgaacg a
 //
+
