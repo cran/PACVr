@@ -1,9 +1,9 @@
 #!/usr/bin/R
 #contributors = c("Michael Gruenstaeudl","Nils Jenke")
 #email = "m.gruenstaeudl@fu-berlin.de", "nilsj24@zedat.fu-berlin.de"
-#version = "2020.01.17.1800"
+#version = "2020.07.29.1700"
 
-HistCol <- function(cov, threshold,relative) {
+HistCol <- function(cov, threshold, relative, logScale) {
   
   # Function to generate color vector for histogram data
   # ARGS:
@@ -17,15 +17,18 @@ HistCol <- function(cov, threshold,relative) {
     stop()
   }
   
-  if(relative == TRUE){
+  if(relative == TRUE & logScale){
+    threshold <- mean(cov[,4]) + log(threshold)
+    
+  }else if(relative == TRUE){
     threshold <- mean(cov[,4]) * threshold
+    
   }
   color <- rep("black",nrow(cov))
   ind   <- as.numeric(cov[ ,4]) <= threshold
   color <- replace(color,ind,"red")
   return(color)
 }
-
 
 boolToDeci <- function(boolList) {
   

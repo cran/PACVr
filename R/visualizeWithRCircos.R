@@ -1,24 +1,24 @@
 #!/usr/bin/R
 #contributors = c("Michael Gruenstaeudl","Nils Jenke")
 #email = "m.gruenstaeudl@fu-berlin.de", "nilsj24@zedat.fu-berlin.de"
-#version = "2020.01.17.1800"
+#version = "2020.07.29.1700"
 
-#' Title
-#'
-#' @param plotTitle 
-#' @param genes 
-#' @param regions 
-#' @param coverage 
-#' @param threshold 
-#'
-#' @return
-#' @export
-#'
-#' @examples
+# Title
+#
+# @param plotTitle 
+# @param genes 
+# @param regions 
+# @param coverage 
+# @param threshold 
+#
+# @return
+# @export
+#
+# @examples
 visualizeWithRCircos <- function(plotTitle, genes, regions, 
-                                 coverage, windowSize, threshold,
-                                 relative, linkData, syntenyLineType=3,
-                                 textSize) {
+                                 coverage, windowSize, logScale,
+                                 threshold, relative, linkData, 
+                                 syntenyLineType=3, textSize) {
   
   # Generates the visualization of genome data and their tracks
   # ARGS:
@@ -33,6 +33,11 @@ visualizeWithRCircos <- function(plotTitle, genes, regions,
   #   linkData: data frame that contains genomic region, coverage start, coverage end and coverage value
   # RETURNS:
   #   ---
+  
+  if(logScale==TRUE){
+    coverage$coverage <- log(coverage$coverage)
+  }
+  coverage$Chromosome <- ""
 
   # 1. RCIRCOS INITIALIZATION
 
@@ -41,23 +46,22 @@ visualizeWithRCircos <- function(plotTitle, genes, regions,
   RCircos::RCircos.Env
 
   suppressMessages(
-    RCircos.Set.Core.Components(cyto.info      = regions, 
+    RCircos::RCircos.Set.Core.Components(cyto.info      = regions, 
                                 chr.exclude    =  NULL,
                                 tracks.inside  =  0, 
                                 tracks.outside =  0)
   )
 
   # 2. SET PARAMETER FOR IDEOGRAM
-
-  rcircos.params <- RCircos.Get.Plot.Parameters()
+  rcircos.params <- RCircos::RCircos.Get.Plot.Parameters()
   rcircos.params$base.per.unit <- 1
   rcircos.params$chrom.paddings <- 1
-  rcircos.params$track.height <- 0.07#0.07
+  rcircos.params$track.height <- 0.07
   rcircos.params$text.size <- textSize
   rcircos.params$track.background <- "gray71"
   rcircos.params$sub.tracks <- 4
-  rcircos.params$char.width <- 16666667/3*(max(regions$chromEnd)/50000)
-  rcircos.params$hist.color <- HistCol(coverage, threshold,relative)
+  rcircos.params$char.width <- 6000000*(max(regions$chromEnd)/(52669+310*(nrow(genes))))/textSize
+  rcircos.params$hist.color <- HistCol(coverage, threshold,relative, logScale)
   rcircos.params$line.color <- "yellow3"
   rcircos.params$chrom.width <- 0.05
   rcircos.params$track.in.start <- 1.08
@@ -65,42 +69,38 @@ visualizeWithRCircos <- function(plotTitle, genes, regions,
   rcircos.params$radius.len <- 3
   PACVr.Reset.Plot.Parameters(rcircos.params)
   
-  rcircos.cyto <- RCircos.Get.Plot.Ideogram()
+  rcircos.cyto <- RCircos::RCircos.Get.Plot.Ideogram()
   rcircos.cyto$ChrColor <- "black"
-  RCircos.Reset.Plot.Ideogram(rcircos.cyto)
+  RCircos::RCircos.Reset.Plot.Ideogram(rcircos.cyto)
   # 3. GRAPHIC DEVICE INITIALIZATION
   suppressMessages(
-    RCircos.Set.Plot.Area()
+    RCircos::RCircos.Set.Plot.Area()
   )
 
   suppressMessages(
-    RCircos.Chromosome.Ideogram.Plot()
+    RCircos::RCircos.Chromosome.Ideogram.Plot()
   )
-
-  
   # 4. GENERATE PLOT
   PACVr.Ideogram.Tick.Plot(tick.num=10, track.for.ticks=2, add.text.size=0.1)
-  #outside.pos <- 1.05
-  #inside.pos <- RCircos.Get.Plot.Boundary(track.num = 1, "in")[2]
   
   suppressMessages(
-    PACVr.Gene.Connector.Plot(genomic.data=genes, track.num=1, side="in", 
+    PACVr.Gene.Connector.Plot(genomic.data=genes, track.num=1, side="in"#, 
                               #inside.pos = inside.pos, outside.pos = outside.pos)
                               )
   )
   
-  suppressMessages(
+#  suppressMessages(
     PACVr.Gene.Name.Plot(gene.data=genes, name.col=4, track.num=2,
                          side="in"
                         )
-  )
+#  )
   
   PACVr.Gene.Name.Plot(gene.data=regions, name.col=4, track.num=1, 
                        side="out", rotate=90, correction=0.2, add.text.size=0.2
                        )
   
-  outside.pos <- RCircos.Get.Plot.Boundary(track.num = 5, "in")[1]
-  inside.pos <- RCircos.Get.Plot.Boundary(track.num = 6, "in")[2]
+  outside.pos <- RCircos::RCircos.Get.Plot.Boundary(track.num = 5, "in")[1]
+  inside.pos <- RCircos::RCircos.Get.Plot.Boundary(track.num = 6, "in")[2]
   
   suppressMessages(
     PACVr.Histogram.Plot(hist.data=coverage, data.col= 4, track.num= 5,
@@ -125,7 +125,7 @@ visualizeWithRCircos <- function(plotTitle, genes, regions,
   if(is.data.frame(linkData) == TRUE){
     if(syntenyLineType == 1){
       suppressMessages(
-        RCircos.Ribbon.Plot(ribbon.data=linkData, track.num=7, by.chromosome=FALSE,
+        RCircos::RCircos.Ribbon.Plot(ribbon.data=linkData, track.num=7, by.chromosome=FALSE,
                             genomic.columns=3, twist=TRUE
                            )
       )
@@ -133,7 +133,7 @@ visualizeWithRCircos <- function(plotTitle, genes, regions,
   
     else if(syntenyLineType == 2){
       suppressMessages(
-        RCircos.Link.Plot(link.data=linkData, track.num=7, by.chromosome=FALSE,
+        RCircos::RCircos.Link.Plot(link.data=linkData, track.num=7, by.chromosome=FALSE,
                           genomic.columns=3, lineWidth=rep(0.5, nrow(linkData))
                          )
       )
@@ -141,20 +141,20 @@ visualizeWithRCircos <- function(plotTitle, genes, regions,
   }
   
   # 5. GENERATE TITLE AND LEGEND
-  title(paste(plotTitle),line = -4.5, cex.main = 0.8)
+  graphics::title(paste(plotTitle),line = -4.5, cex.main = 0.8)
   if (relative == TRUE) {
     absolute <- trunc(mean(coverage[,4]) * threshold)
     perc <- threshold*100
-    legend(x=-1.6,y=-1.2, legend = c(paste("Coverage > ", trunc(mean(coverage[,4]) * threshold),"X ", "(=",threshold*100,"% of avg. cov.)", sep = ""), 
+    graphics::legend(x=-1.6,y=-1.2, legend = c(paste("Coverage > ", trunc(mean(coverage[,4]) * threshold),"X ", "(=",threshold*100,"% of avg. cov.)", sep = ""), 
                                     as.expression(bquote("Coverage"<=.(paste(" ",absolute,"X (=",perc,"% of avg. cov.)",sep="")))),
                                     "Average Coverage:",
                                     averageLines),
            pch = c(15, 15, NA, rep(NA,length(averageLines))), lty = c(NA, NA, 1, rep(NA,length(averageLines))), lwd = 2,
            col = c("black", "red", "yellow3",rep(NA,length(averageLines))), cex = 0.5, bty = "n"
-    )
+      )
   } else {
     absolute <- round(threshold/trunc(mean(coverage[,4]))*100)
-    legend("bottomleft", legend = c(paste("Coverage > ", threshold,"X ", "(=",round(threshold/trunc(mean(coverage[,4]))*100),"% of avg. cov.)", sep = ""), 
+    graphics::legend("bottomleft",legend = c(paste("Coverage > ", threshold,"X ", "(=",round(threshold/trunc(mean(coverage[,4]))*100),"% of avg. cov.)", sep = ""), 
                                     as.expression(bquote("Coverage"<=.(paste(threshold, "X (=",absolute,"% of avg. cov.)",sep="")))),
                                     "Average Coverage:",
                                     averageLines),
