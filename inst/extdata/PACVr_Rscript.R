@@ -1,7 +1,7 @@
 #!/usr/bin/R
-#contributors = c("Michael Gruenstaeudl","Nils Jenke")
-#email = "m.gruenstaeudl@fu-berlin.de", "nilsj24@zedat.fu-berlin.de"
-#version = "2020.02.10.1300"
+#contributors=c("Gregory Smith", "Nils Jenke", "Michael Gruenstaeudl")
+#email="m_gruenstaeudl@fhsu.edu"
+#version="2023.11.23.1530"
 
 library("optparse")
 
@@ -62,11 +62,11 @@ CmdLineArgs <- function() {
                               dest    = "textSize",
                               help    = "a numeric value that specifies the relative font size of the text element in the visualization [default = %default]", 
                               metavar = "integer"),
-                  make_option(opt_str = c("-d","--delete"), 
+                  make_option(opt_str = c("-v","--verbose"), 
                               type    = "logical", 
-                              default = TRUE, 
-                              dest    = "delete",
-                              help    = "the decision to delete temporary files upon program execution [default = %default]", 
+                              default = FALSE, 
+                              dest    = "verbose",
+                              help    = "the decision to provide detailed information regarding the quality of the assembly [default = %default]", 
                               metavar = "logical"),
                   make_option(opt_str = c("-o","--output"), 
                               type    = "character", 
@@ -95,15 +95,15 @@ opt <- CmdLineArgs()
 ########################################################################
 
 require("PACVr")
-PACVr.complete(gbk.file = opt$gbkFile,
-               bam.file = opt$bamFile,
+PACVr.complete(gbkFile = opt$gbkFile,
+               bamFile = opt$bamFile,
                windowSize = opt$windowSize,
                logScale = opt$logScale,
                threshold = opt$threshold,
                syntenyLineType = opt$syntenyLineType,
                relative = opt$relative,
                textSize = opt$textSize,
-               delete = opt$delete,
+               verbose = opt$verbose,
                output = opt$output)
 
 ########################################################################
