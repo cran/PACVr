@@ -1,6 +1,6 @@
 Package: PACVr
-Version: 1.0.5
-Date: 2023-12-07
+Version: 1.0.6
+Date: 2024-01-07
 Title: Plastome Assembly Coverage Visualization
 Authors@R: c(person("Gregory", "Smith", role=c("ctb")),
              person("Nils", "Jenke", role=c("ctb")),
@@ -16,9 +16,9 @@ RoxygenNote: 7.1.1
 Suggests: testthat (>= 3.0.0)
 Config/testthat/edition: 3
 NeedsCompilation: no
-Packaged: 2023-12-08 01:15:50 UTC; mi
+Packaged: 2024-01-08 05:35:34 UTC; gruenstaeudl
 Author: Gregory Smith [ctb],
   Nils Jenke [ctb],
   Michael Gruenstaeudl [aut, cre] (0000-0002-1666-1773)
 Repository: CRAN
-Date/Publication: 2023-12-08 11:20:28 UTC
+Date/Publication: 2024-01-09 01:20:07 UTC
