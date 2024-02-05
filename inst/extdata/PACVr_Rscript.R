@@ -1,7 +1,7 @@
 #!/usr/bin/env RScript
 #contributors=c("Gregory Smith", "Nils Jenke", "Michael Gruenstaeudl")
 #email="m_gruenstaeudl@fhsu.edu"
-#version="2024.01.07.2200"
+#version="2024.02.02.2100"
 
 library("optparse")
 
@@ -44,11 +44,18 @@ CmdLineArgs <- function() {
                               dest    = "threshold",
                               help    = "a numeric value that specifies the threshold for plotting coverage depth bars in red as opposed to the default black [default = %default]", 
                               metavar = "integer"),
-                  make_option(opt_str = c("-s","--syntenyLineType"), 
+                  make_option(opt_str = c("-irc","--IRCheck"),
                               type    = "numeric", 
-                              default = 1, 
-                              dest    = "syntenyLineType",
-                              help    = "a numeric value of 1 or 2 that specifies the line type for visualizing IR gene synteny; 1 = ribbon lines, 2 = solid lines, otherwise = no line [default = %default]",
+                              default = 1,
+                              dest    = "IRCheck",
+                              help    = paste("a numeric value that specifies if tests for IRs of input genome",
+                                              "should be performed, and - if IRs are present - which line type",
+                                              "to be used  for visualizing gene synteny between IRs;",
+                                              "0 = IR presence test but no synteny visualization,",
+                                              "1 = IR presence test and synteny visualization, with ribbon lines between IRs,",
+                                              "2 = IR presence test and synteny visualization, with solid lines between IRs,",
+                                              "otherwise = neither IR presence test nor synteny visualization",
+                                              "[default = %default]"),
                               metavar = "integer"),
                   make_option(opt_str = c("-r","--relative"), 
                               type    = "logical", 
@@ -62,17 +69,13 @@ CmdLineArgs <- function() {
                               dest    = "textSize",
                               help    = "a numeric value that specifies the relative font size of the text element in the visualization [default = %default]", 
                               metavar = "integer"),
-                  make_option(opt_str = c("-rc","--regionsCheck"),
-                              type    = "logical",
-                              default = FALSE,
-                              dest    = "regionsCheck",
-                              help    = "a boolean that specifies if region analysis of genome should be performed; FALSE disables syntenyLineType and verbose [default = %default]",
-                              metavar = "logical"),
                   make_option(opt_str = c("-v","--verbose"), 
                               type    = "logical", 
                               default = FALSE, 
                               dest    = "verbose",
-                              help    = "the decision to provide detailed information regarding the quality of the assembly [default = %default]", 
+                              help    = paste("a boolean, that when TRUE, generates additional files with",
+                                              "detailed genomic region information;",
+                                              "requires a `regionsCheck` value that will perform region analysis"),
                               metavar = "logical"),
                   make_option(opt_str = c("-o","--output"), 
                               type    = "character", 
@@ -106,10 +109,9 @@ PACVr.complete(gbkFile = opt$gbkFile,
                windowSize = opt$windowSize,
                logScale = opt$logScale,
                threshold = opt$threshold,
-               syntenyLineType = opt$syntenyLineType,
+               IRCheck = opt$IRCheck,
                relative = opt$relative,
                textSize = opt$textSize,
-               regionsCheck = opt$regionsCheck,
                verbose = opt$verbose,
                output = opt$output)
 

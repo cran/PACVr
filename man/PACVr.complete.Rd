@@ -4,56 +4,80 @@
 \alias{PACVr.complete}
 \title{Execute the complete pipeline of \pkg{PACVr}}
 \usage{
-PACVr.complete(gbkFile,
-               bamFile,
-               windowSize = 250,
-               logScale = FALSE,
-               threshold = 0.5,
-               syntenyLineType = 1,
-               relative = TRUE,
-               textSize = 0.5,
-               regionsCheck = FALSE,
-               verbose = FALSE,
-               output = NA)
+PACVr.complete(
+  gbkFile,
+  bamFile,
+  windowSize = 250,
+  logScale = FALSE,
+  threshold = 0.5,
+  IRCheck = NA,
+  relative = TRUE,
+  textSize = 0.5,
+  verbose = FALSE,
+  output = NA
+)
 }
 \arguments{
-\item{gbkFile}{a character vector that specifies the name of, and path to, the GenBank input file}
+\item{gbkFile}{a character string that specifies the name of, and path to, 
+the GenBank input file; alternatively, a character string of GenBank data}
 
-\item{bamFile}{a character vector that specifies the name of, and path to, the BAM input file}
+\item{bamFile}{a character string that specifies the name of, and path to, 
+the BAM input file}
 
-\item{windowSize}{a numeric value that specifies window size in which the coverage is calculated}
+\item{windowSize}{a numeric value that specifies window size in which the 
+coverage is calculated}
 
-\item{logScale}{a boolean that specifies if the coverage depth is to be log-transformed before visualizing it}
+\item{logScale}{a boolean that specifies if the coverage depth is to be 
+log-transformed before visualizing it}
 
-\item{threshold}{a numeric value that specifies the threshold for plotting coverage depth bars in red as opposed to the default black}
+\item{threshold}{a numeric value that specifies the threshold for plotting 
+coverage depth bars in red as opposed to the default black}
 
-\item{syntenyLineType}{a numeric value of 1 or 2 that specifies the line type for visualizing IR gene synteny; 1 = ribbon lines, 2 = solid lines, otherwise = no line}
+\item{IRCheck}{a numeric value that specifies if tests 
+for IRs of input genome should be performed, and - if IRs are present - 
+which line type to be used for visualizing gene synteny between IRs;
+0 = IR presence test but no synteny visualization, 
+1 = IR presence test and synteny visualization, with ribbon lines between IRs,
+2 = IR presence test and synteny visualization, with solid lines between IRs,
+otherwise = neither IR presence test nor synteny visualization}
 
-\item{relative}{a boolean that specifies whether the threshold is a relative value of the average coverage instead of an absolute value}
+\item{relative}{a boolean that specifies whether the threshold is a relative 
+value of the average coverage instead of an absolute value}
 
-\item{textSize}{a numeric value that specifies the relative font size of the text element in the visualization}
+\item{textSize}{a numeric value that specifies the relative font size of the 
+text element in the visualization}
 
-\item{regionsCheck}{a boolean that specifies if region analysis of genome should be performed; FALSE disables syntenyLineType and verbose}
+\item{verbose}{a boolean, that when TRUE, generates additional files with
+detailed genomic region information;
+requires a `IRCheck` value that will perform region analysis}
 
-\item{verbose}{the decision to show additional information regarding the quality of the assembly}
-
-\item{output}{a character vector that specifies the name of, and path to, the output file}
+\item{output}{a character string that specifies the name of, and path to, 
+the output file}
+}
+\value{
+A file in pdf format containing a circular visualization of the 
+submitted plastid sample. 
+As a function, returns 0 in case of visualization success.
 }
 \description{
-This function executes the complete pipeline of \pkg{PACVr} via a single command.
+This function executes the complete pipeline of \pkg{PACVr} 
+via a single command.
 }
 \examples{
 \dontrun{
-gbkFile <- system.file("extdata", 
-                       "NC_045072/NC_045072.gb", 
-                       package="PACVr")
-bamFile <- system.file("extdata", 
-                       "NC_045072/NC_045072_PlastomeReadsOnly.sorted.bam", 
-                       package="PACVr")
+gbkFile <- system.file("extdata", "NC_045072/NC_045072.gb", package="PACVr")
+bamFile <- system.file("extdata", "NC_045072/NC_045072_subsampled.bam", package="PACVr")
 outFile <- paste(tempdir(), "/NC_045072__all_reads.pdf", sep="")
-PACVr.complete(gbkFile, bamFile, windowSize=250, 
-               logScale=FALSE, threshold=0.5, syntenyLineType=1, 
-               relative=TRUE, textSize=0.5, regionsCheck=TRUE,
+PACVr.complete(gbkFile=gbkFile, bamFile=bamFile, windowSize=250, logScale=FALSE,
+               threshold=0.5, IRCheck=1, relative=TRUE, textSize=0.5,
+               verbose=FALSE, output=outFile)
+}
+\dontrun{
+gbkFile <- system.file("extdata", "MG936619/MG936619.gb", package="PACVr")
+bamFile <- system.file("extdata", "MG936619/MG936619_subsampled.bam", package="PACVr")
+outFile <- paste(tempdir(), "/MG936619_CoverageViz.pdf", sep="")
+PACVr.complete(gbkFile=gbkFile, bamFile=bamFile, windowSize=50, logScale=FALSE,
+               threshold=0.5, IRCheck=NA, relative=TRUE, textSize=0.5,
                verbose=FALSE, output=outFile)
 }
 }

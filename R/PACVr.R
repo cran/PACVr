@@ -1,16 +1,25 @@
 #!/usr/bin/env RScript
 #contributors=c("Gregory Smith", "Nils Jenke", "Michael Gruenstaeudl")
 #email="m_gruenstaeudl@fhsu.edu"
-#version="2024.01.07.2200"
+#version="2024.02.01.1736"
+
+PACVr.read.gb <- function(gbkFile) {
+  gbkRaw <- getGbkRaw(gbkFile)
+  if (is.null(gbkRaw$char)) {
+    return(NULL)
+  }
+  gbkData <- read.gbWithHandling(gbkRaw)
+  return(gbkData)
+}
 
 PACVr.parseName <- function (gbkData) {
   return(read.gbSampleName(gbkData))
 }
 
-PACVr.parseRegions <- function (gbkData, gbkDataDF) {
-  raw_regions <- ExtractAllRegions(gbkDataDF)
-  regions <- fillDataFrame(gbkData, raw_regions)
-  return(regions)
+PACVr.parseQuadripRegions <- function (gbkData, gbkDataDF) {
+  raw_quadripRegions <- ParseQuadripartiteStructure(gbkDataDF)
+  quadripRegions <- fillDataFrame(gbkData, raw_quadripRegions)
+  return(quadripRegions)
 }
 
 PACVr.parseSource <- function(gbkDataDF) {
@@ -29,11 +38,11 @@ PACVr.calcCoverage <-
     return(coverage)
   }
 
-PACVr.generateIRGeneData <- function(genes, regions,
+PACVr.generateIRGeneData <- function(genes, quadripRegions,
                                      syntenyLineType) {
   # Parse GenBank file
-  if ("IRb" %in% regions[, 4] &&
-      "IRa" %in% regions[, 4]) {
+  if ("IRb" %in% quadripRegions[, 4] &&
+      "IRa" %in% quadripRegions[, 4]) {
     linkData <- GenerateIRSynteny(genes, syntenyLineType)
     return(linkData)
   }
@@ -43,7 +52,8 @@ PACVr.generateIRGeneData <- function(genes, regions,
 PACVr.verboseInformation <- function(gbkData,
                                      bamFile,
                                      genes,
-                                     regions,
+                                     quadripRegions,
+                                     IRCheck,
                                      output) {
   sampleName <- read.gbSampleName(gbkData)
   # Step 1. Check ...
@@ -64,13 +74,15 @@ PACVr.verboseInformation <- function(gbkData,
     dir.create(tmpDir)
   }
   # Step 3. Write output
-  writeTables(regions, bamFile, genes, tmpDir, sampleName)
-  checkIREquality(gbkData, regions, tmpDir, sampleName)
+  writeTables(quadripRegions, bamFile, genes, tmpDir, sampleName)
+  if (IRCheck) {
+    checkIREquality(gbkData, quadripRegions, tmpDir, sampleName)
+  }
 }
 
 PACVr.visualizeWithRCircos <- function(gbkData,
                                        genes,
-                                       regions,
+                                       quadripRegions,
                                        coverage,
                                        windowSize,
                                        logScale,
@@ -85,7 +97,7 @@ PACVr.visualizeWithRCircos <- function(gbkData,
   visualizeWithRCircos(
     plotTitle,
     genes,
-    regions,
+    quadripRegions,
     coverage,
     windowSize,
     threshold,
@@ -98,57 +110,83 @@ PACVr.visualizeWithRCircos <- function(gbkData,
 }
 
 #' @title Execute the complete pipeline of \pkg{PACVr}
-#' @description This function executes the complete pipeline of \pkg{PACVr} via a single command.
+#' @description This function executes the complete pipeline of \pkg{PACVr} 
+#' via a single command.
 #'
-#' @param gbkFile a character vector that specifies the name of, and path to, the GenBank input file
-#' @param bamFile a character vector that specifies the name of, and path to, the BAM input file
-#' @param windowSize a numeric value that specifies window size in which the coverage is calculated
-#' @param logScale a boolean that specifies if the coverage depth is to be log-transformed before visualizing it
-#' @param threshold a numeric value that specifies the threshold for plotting coverage depth bars in red as opposed to the default black
-#' @param syntenyLineType a numeric value of 1 or 2 that specifies the line type for visualizing IR gene synteny; 1 = ribbon lines, 2 = solid lines, otherwise = no line
-#' @param relative a boolean that specifies whether the threshold is a relative value of the average coverage instead of an absolute value
-#' @param textSize a numeric value that specifies the relative font size of the text element in the visualization
-#' @param verbose the decision to generate additional files with detailed genomic region information
-#' @param regionsCheck a boolean that specifies if region analysis of genome should be performed; FALSE disables syntenyLineType and verbose
-#' @param output a character vector that specifies the name of, and path to, the output file
-#' @return A file in pdf format containing a circular visualization of the submitted plastid sample.
+#' @param gbkFile a character string that specifies the name of, and path to, 
+#' the GenBank input file; alternatively, a character string of GenBank data 
+#' @param bamFile a character string that specifies the name of, and path to, 
+#' the BAM input file
+#' @param windowSize a numeric value that specifies window size in which the 
+#' coverage is calculated
+#' @param logScale a boolean that specifies if the coverage depth is to be 
+#' log-transformed before visualizing it
+#' @param threshold a numeric value that specifies the threshold for plotting 
+#' coverage depth bars in red as opposed to the default black
+#' @param IRCheck a numeric value that specifies if tests 
+#' for IRs of input genome should be performed, and - if IRs are present - 
+#' which line type to be used for visualizing gene synteny between IRs;
+#' 0 = IR presence test but no synteny visualization, 
+#' 1 = IR presence test and synteny visualization, with ribbon lines between IRs,
+#' 2 = IR presence test and synteny visualization, with solid lines between IRs,
+#' otherwise = neither IR presence test nor synteny visualization
+#' @param relative a boolean that specifies whether the threshold is a relative 
+#' value of the average coverage instead of an absolute value
+#' @param textSize a numeric value that specifies the relative font size of the 
+#' text element in the visualization
+#' @param verbose a boolean, that when TRUE, generates additional files with
+#' detailed genomic region information;
+#' requires a `IRCheck` value that will perform region analysis
+#' @param output a character string that specifies the name of, and path to, 
+#' the output file
+#' @return A file in pdf format containing a circular visualization of the 
+#' input plastid genome and its sequence reads. 
+#' As a function, returns 0 in case of visualization success.
 #' @export
 #' @examples
-#'\dontrun{
-#' gbkFile <- system.file("extdata",
-#'                        "NC_045072/NC_045072.gb",
-#'                        package="PACVr")
-#' bamFile <- system.file("extdata",
-#'                        "NC_045072/NC_045072_PlastomeReadsOnly.sorted.bam",
-#'                        package="PACVr")
+#' \dontrun{
+#' gbkFile <- system.file("extdata", "NC_045072/NC_045072.gb", package="PACVr")
+#' bamFile <- system.file("extdata", "NC_045072/NC_045072_subsampled.bam", package="PACVr")
 #' outFile <- paste(tempdir(), "/NC_045072__all_reads.pdf", sep="")
 #' PACVr.complete(gbkFile=gbkFile, bamFile=bamFile, windowSize=250, logScale=FALSE,
-#'                threshold=0.5, syntenyLineType=1, relative=TRUE, textSize=0.5,
-#'                regionsCheck=FALSE, verbose=FALSE, output=outFile
-#'                }
+#'                threshold=0.5, IRCheck=1, relative=TRUE, textSize=0.5,
+#'                verbose=FALSE, output=outFile)
+#' }
+#' \dontrun{
+#' gbkFile <- system.file("extdata", "MG936619/MG936619.gb", package="PACVr")
+#' bamFile <- system.file("extdata", "MG936619/MG936619_subsampled.bam", package="PACVr")
+#' outFile <- paste(tempdir(), "/MG936619_CoverageViz.pdf", sep="")
+#' PACVr.complete(gbkFile=gbkFile, bamFile=bamFile, windowSize=50, logScale=FALSE,
+#'                threshold=0.5, IRCheck=NA, relative=TRUE, textSize=0.5,
+#'                verbose=FALSE, output=outFile)
+#' }
+	
 PACVr.complete <- function(gbkFile,
                            bamFile,
                            windowSize=250,
                            logScale=FALSE,
                            threshold=0.5,
-                           syntenyLineType=1,
+                           IRCheck=NA,
                            relative=TRUE,
                            textSize=0.5,
-                           regionsCheck=FALSE,
                            verbose=FALSE,
                            output=NA) {
   ######################################################################
-  logger::log_info('Reading GenBank flatfile `{gbkFile}`')
-  gbkData <- read.gb::read.gb(gbkFile, DNA=TRUE, Type="full", Source="File")
-  gbkDataDF <- read.gb2DF(gbkData)
+  gbkData <- PACVr.read.gb(gbkFile)
+  isIRCheck <- getIsIRCheck(IRCheck)
+  gbkDataDF <- read.gb2DF(gbkData, isIRCheck)
+  if (is.null(gbkDataDF)) {
+    logger::log_error(paste("No usable data to perform specified analysis"))
+    return(NULL)
+  }
   
   ###################################
-  if (regionsCheck) {
+  if (isIRCheck) {
     logger::log_info('Parsing the different genome regions')
-    regions <- PACVr.parseRegions(gbkData,
-                                  gbkDataDF)
+    quadripRegions <- PACVr.parseQuadripRegions(gbkData,
+										 gbkDataDF)
   } else {
-    regions <- PACVr.parseSource(gbkDataDF)
+    quadripRegions <- PACVr.parseQuadripRegions(gbkDataDF)
   }
 
   ###################################
@@ -162,22 +200,26 @@ PACVr.complete <- function(gbkFile,
 
   ###################################
   linkData <- NULL
-  IRCheck <- regionsCheck && isSyntenyLineType(syntenyLineType)
+  IRCheck <- isSyntenyLineType(IRCheck)
   if (IRCheck) {
     logger::log_info('Inferring the IR regions and the genes within the IRs')
     linkData <- PACVr.generateIRGeneData(genes,
-                                         regions,
-                                         syntenyLineType)
+                                         quadripRegions,
+                                         IRCheck)
   }
 
   ###################################
-  if (regionsCheck && verbose) {
+  if (isIRCheck && verbose) {
       logger::log_info('Generating statistical information on the sequencing coverage')
       PACVr.verboseInformation(gbkData,
-                           bamFile,
-                           genes,
-                           regions,
-                           output)
+                               bamFile,
+                               genes,
+                               quadripRegions,
+                               IRCheck,
+                               output)
+  } else if (verbose) {
+      logger::log_warn(paste0('Verbose output requires `IRCheck` in ',
+                              '`', deparse(getIRCheckTypes()), '`'))
   }
   
   ###################################
@@ -187,14 +229,14 @@ PACVr.complete <- function(gbkFile,
     PACVr.visualizeWithRCircos(
       gbkData,
       genes,
-      regions,
+      quadripRegions,
       coverage,
       windowSize,
       threshold,
       logScale,
       relative,
       linkData,
-      syntenyLineType,
+      IRCheck,
       textSize
     )
     dev.off()
@@ -204,14 +246,14 @@ PACVr.complete <- function(gbkFile,
     PACVr.visualizeWithRCircos(
       gbkData,
       genes,
-      regions,
+      quadripRegions,
       coverage,
       windowSize,
       threshold,
       logScale,
       relative,
       linkData,
-      syntenyLineType,
+      IRCheck,
       textSize
     )
     dev.off()
@@ -220,4 +262,5 @@ PACVr.complete <- function(gbkFile,
   ######################################################################
   logger::log_success('Done.')
   ######################################################################
+  return(0)
 }
