@@ -1,10 +1,9 @@
 #!/usr/bin/env RScript
 #contributors=c("Gregory Smith", "Nils Jenke", "Michael Gruenstaeudl")
 #email="m_gruenstaeudl@fhsu.edu"
-#version="2024.02.01.1736"
+#version="2024.02.28.0051"
 
-checkIREquality <- function(gbkData, regions, dir, sample_name) {
-  gbkSeq <- read.gbSeq(gbkData)
+checkIREquality <- function(gbkSeq, regions, dir, sample_name) {
   if ("IRb" %in% regions[, 4] && "IRa" %in% regions[, 4]) {
     repeatB <- as.numeric(regions[which(regions[, 4] == "IRb"), 2:3])
     repeatA <-
@@ -158,7 +157,10 @@ plotIRLinks <- function(linkData, syntenyLineType) {
   }
 }
 
-isSyntenyLineType <- function(syntenyLineType) {
+getSyntenyLineType <- function(IRCheck) {
   syntenyLineTypes <- c(1, 2)
-  return(syntenyLineType %in% syntenyLineTypes)
+  if (IRCheck %in% syntenyLineTypes) {
+    return(IRCheck)
+  }
+  return(NULL)
 }
