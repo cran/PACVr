@@ -1,9 +1,9 @@
 #!/usr/bin/env RScript
 #contributors=c("Gregory Smith", "Nils Jenke", "Michael Gruenstaeudl")
 #email="m_gruenstaeudl@fhsu.edu"
-#version="2024.02.28.0051"
+#version="2024.04.08.0223"
 
-visualizeWithRCircos <- function(gbkData,
+vizWithRCircos <- function(gbkData,
                                  coverage,
                                  analysisSpecs,
                                  plotSpecs) {
@@ -180,22 +180,8 @@ getLegendParams <- function(coverage,
                absolute)
     )
   }
-  
-  legendParams$legend <- c(
-    paste(
-      "Coverage > ",
-      legendParams$vals[[1]],
-      "X ",
-      "(=",
-      legendParams$vals[[2]],
-      "% of avg. cov.)",
-      sep = ""
-    ),
-    as.expression(bquote(
-      "Coverage" <= .(
-      paste(legendParams$vals[[3]], "X (=", legendParams$vals[[4]], "% of avg. cov.)", sep = "")
-    )))
-  )
+
+  legendParams$legend <- getLegendField(legendParams$vals)
   
   if (is.vector(averageLines)) {
     legendParams$legend <- c(legendParams$legend,
@@ -209,29 +195,35 @@ getLegendParams <- function(coverage,
   return(legendParams)
 }
 
-getOutputFields <- function(output) {
-  outputTypes <- paste(getOutputTypes(), collapse = "|")
-  outputPattern <- sprintf("^(?:.+\\.)(%s)$", outputTypes)
-  outputMatch <- regexec(outputPattern, output, ignore.case = TRUE)
-  outputVec <- regmatches(output, outputMatch)
-
-  # non-char `output` or non-match for char `output`
-  if ((length(outputVec) == 0) || (length(outputVec[[1]]) == 0)) {
-    output <- NULL
-    outputType <- NULL
-    isOutput <- FALSE
-  } else {
-    output <- outputVec[[1]][1]
-    outputType <- tolower(outputVec[[1]][2])
-    isOutput <- TRUE
-  }
-
-  outputFields <- list(
-    output = output,
-    outputType = outputType,
-    isOutput = isOutput
+getLegendField <- function(vals) {
+  upper <- paste(
+    "Coverage > ",
+    vals[[1]],
+    "X ",
+    "(=",
+    vals[[2]],
+    "% of avg. cov.)",
+    sep = ""
   )
-  return(outputFields)
+  if (vals[[3]] == 0) {
+    lower <- paste(
+      "Coverage = ",
+      vals[[3]],
+      "X ",
+      "(=",
+      vals[[4]],
+      "% of avg. cov.)",
+      sep = ""
+    )
+  } else {
+    lower <- as.expression(bquote(
+      "Coverage" <= .(
+        paste(vals[[3]], "X (=", vals[[4]], "% of avg. cov.)", sep = "")
+      )))
+  }
+  return(
+    c(upper, lower)
+  )
 }
 
 createVizFile <- function(plotSpecs) {
@@ -244,13 +236,26 @@ createVizFile <- function(plotSpecs) {
         height=10)
   } else if (outputType == "png") {
     png(output,
-        width=480,
-        height=480)
+        width=10,
+        height=10,
+        units="in",
+        res=300)
   }
 }
 
-getOutputTypes <- function() {
-  outputTypes <- c("pdf",
-                   "png")
-  return(outputTypes)
-}
+GenerateHistogramData <- function(region, coverage, windowSize, lastOne) {
+    # Function to generate line data for RCircos.Line.Plot
+    # ARGS:
+    #   coverage: data.frame of coverage
+    # RETURNS:
+    #   data.frame with region means to plot over histogram data
+    # Error handling
+    logger::log_info('  Generating histogram data for region `{region[4]}`')
+    if (lastOne) {
+      coverage <- coverage[(floor(region[1, 2] / windowSize) + 1):ceiling(region[1, 3] / windowSize),]
+    } else {
+      coverage <- coverage[(floor(region[1, 2] / windowSize) + 1):floor(region[1, 3] / windowSize) + 1,]
+    }
+    coverage[, 4] <- mean(coverage[, 4])
+    return(coverage)
+  }

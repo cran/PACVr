@@ -1,7 +1,7 @@
 #!/usr/bin/env RScript
 #contributors=c("Gregory Smith", "Nils Jenke", "Michael Gruenstaeudl")
 #email="m_gruenstaeudl@fhsu.edu"
-#version="2024.02.28.0051"
+#version="2024.04.08.0223"
 
 
 # The following R functions were taken from the R package RCircos and then modified.
@@ -42,19 +42,19 @@ PACVr.Histogram.Plot <- function(hist.data = NULL,
                                  genomic.columns = 3,
                                  is.sorted = TRUE) {
   if (is.null(hist.data)) {
-    warning("Genomic data missing in input.")
-    stop()
+    logger::log_error("Genomic data missing in input.")
+    stop() # Should 'stop()' be replaced with 'return(NULL)' ?
   }
   boundary <- RCircos::RCircos.Get.Plot.Boundary(track.num, side, inside.pos, outside.pos, FALSE)
   outerPos <- boundary[1]
   innerPos <- boundary[2]
   if (is.null(genomic.columns) || genomic.columns < 2 || genomic.columns > 3) {
-    warning("Number of columns for genomic position incorrect.")
-    stop()
+    logger::log_error("Number of columns for genomic position incorrect.")
+    stop() # Should 'stop()' be replaced with 'return(NULL)' ?
   }
   if (is.null(data.col) || data.col <= genomic.columns)  {
-    warning(paste("Number of input columns must be > ", genomic.columns, ".", sep=""))
-    stop()
+    logger::log_error(paste("Number of input columns must be > ", genomic.columns, ".", sep=""))
+    stop() # Should 'stop()' be replaced with 'return(NULL)' ?
   }
   RCircos.Pos <- RCircos::RCircos.Get.Plot.Positions()
   RCircos.Par <- RCircos::RCircos.Get.Plot.Parameters()
@@ -72,8 +72,8 @@ PACVr.Histogram.Plot <- function(hist.data = NULL,
     min.value <- min(histValues)
   } else {
     if (min.value > max.value) {
-      warning("min.value must be greater than max.value.")
-      stop()
+      logger::log_error("min.value must be greater than max.value.")
+	  stop() # Should 'stop()' be replaced with 'return(NULL)' ?
     }
   }
   histHeight <- RCircos::RCircos.Get.Data.Point.Height(histValues,
@@ -510,15 +510,14 @@ PACVr.Reset.Plot.Parameters <- function (new.params = NULL)
     padding.const <- RCircos::RCircos.Get.Padding.Constant()
     total.units <- genome.len / new.params$base.per.unit
     new.padding <- round(padding.const * total.units, digits = 0)
-    
+
     if (new.padding != new.params$base.per.unit) {
-      message(
+      logger::log_info(
         paste(
-          "\nNote: chrom.padding",
+          "`chrom.padding` value",
           new.params$chrom.paddings,
           " was reset to",
-          new.padding,
-          "\n"
+          new.padding
         )
       )
       new.params$chrom.paddings <- new.padding

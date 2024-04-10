@@ -1,7 +1,7 @@
 #!/usr/bin/env RScript
 #contributors=c("Gregory Smith", "Nils Jenke", "Michael Gruenstaeudl")
 #email="m_gruenstaeudl@fhsu.edu"
-#version="2024.02.28.0051"
+#version="2024.04.08.0223"
 
 HistCol <- function(cov, threshold, relative, logScale) {
   # Function to generate color vector for histogram data
@@ -12,8 +12,8 @@ HistCol <- function(cov, threshold, relative, logScale) {
   #   color vector
   # Error handling
   if (!is.numeric(threshold) | threshold < 0) {
-    warning("User-defined coverage depth threshold must be >=1.")
-    stop()
+    logger::log_error("User-defined coverage depth threshold must be >=1.")
+    stop() # Should 'stop()' be replaced with 'return(NULL)' ?
   }
   if (relative == TRUE & logScale) {
     threshold <- mean(cov[, 4]) + log(threshold)
@@ -41,35 +41,6 @@ validateColors <- function(colorsToValidate) {
   if (length(unsupportedColors) > 0) {
     stop("Unsupported R plot color defined.")
   }
-}
-
-getAnalysisSpecs <- function(IRCheck,
-                             windowSize) {
-  analysisSpecs <- list(
-    syntenyLineType = getSyntenyLineType(IRCheck),
-    isIRCheck = getIsIRCheck(IRCheck),
-    windowSize = filterPosNumeric(windowSize)
-  )
-  analysisSpecs$isSyntenyLine <- !is.null(analysisSpecs$syntenyLineType)
-  return(analysisSpecs)
-}
-
-getPlotSpecs <- function(logScale,
-                         threshold,
-                         relative,
-                         textSize,
-                         output) {
-  outputFields <- getOutputFields(output)
-  plotSpecs <- list(
-    logScale = filterLogical(logScale),
-    threshold = filterPosNumeric(threshold),
-    relative = filterLogical(relative),
-    textSize = filterPosNumeric(textSize),
-    output = outputFields$output,
-    outputType = outputFields$outputType,
-    isOutput = outputFields$isOutput
-  )
-  return(plotSpecs)
 }
 
 filterByType <- function(x, typeFun) {
